@@ -1,0 +1,15 @@
+lwip_mqtt_freertos.c:159:13:flexcan_callback	24	static
+lwip_mqtt_freertos.c:185:6:CAN_Init	40	static
+lwip_mqtt_freertos.c:233:6:vTaskTx10ms	24	static
+lwip_mqtt_freertos.c:273:6:vTaskRx5ms	24	static
+lwip_mqtt_freertos.c:314:13:mqtt_topic_subscribed_cb	24	static
+lwip_mqtt_freertos.c:331:13:mqtt_incoming_publish_cb	24	static
+lwip_mqtt_freertos.c:341:13:mqtt_incoming_data_cb	48	dynamic
+lwip_mqtt_freertos.c:373:13:mqtt_subscribe_topics	40	static
+lwip_mqtt_freertos.c:401:13:mqtt_connection_cb	32	static
+lwip_mqtt_freertos.c:447:13:connect_to_mqtt	24	static
+lwip_mqtt_freertos.c:460:13:mqtt_message_published_cb	24	static
+lwip_mqtt_freertos.c:477:13:publish_message	48	static
+lwip_mqtt_freertos.c:492:13:app_thread	32	static
+lwip_mqtt_freertos.c:573:13:generate_client_id	48	static
+lwip_mqtt_freertos.c:596:5:main	56	static
