@@ -41,6 +41,7 @@
 
 #define MSG1TxBATTERY          (0x25)
 #define MSG1RxActuador         (0x80)
+#define MSG1TxKeepAlive		   (0x100)
 
 /* Fix MISRA_C-2012 Rule 17.7. */
 #define LOG_INFO (void)PRINTF
@@ -55,8 +56,8 @@
 volatile bool txComplete = pdFALSE;
 volatile bool rxComplete = pdFALSE;
 flexcan_handle_t flexcanHandle;
-flexcan_mb_transfer_t txBATTERYfer,RxActuadorfer;
-flexcan_frame_t txBATTERY_FRAME,RxActuador_FRAME;
+flexcan_mb_transfer_t txBATTERYfer,RxActuadorfer,txKeepAlivefer;
+flexcan_frame_t txBATTERY_FRAME,RxActuador_FRAME,txKeepAlive_FRAME;
 uint8_t RxMBID;
 
 
@@ -122,13 +123,22 @@ void CAN_Init(void){
        RxActuadorfer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
        RxActuadorfer.frame = &RxActuador_FRAME;
 
-    /* Setup Tx Message Buffer. */
+
+       /* Setup Tx Message Buffer. */
     FLEXCAN_SetTxMbConfig(EXAMPLE_CAN, TX_MESSAGE_BUFFER_NUM, true);
     /* Prepare Tx Frame for sending. */
     txBATTERY_FRAME.format = (uint8_t)kFLEXCAN_FrameFormatStandard;
     txBATTERY_FRAME.type   = (uint8_t)kFLEXCAN_FrameTypeData;
     txBATTERY_FRAME.id     = FLEXCAN_ID_STD(MSG1TxBATTERY);
     txBATTERY_FRAME.length = (uint8_t)DLC;
+
+    /* Setup Tx Message Buffer. */
+    FLEXCAN_SetTxMbConfig(EXAMPLE_CAN, TX_MESSAGE_BUFFER_NUM, true);
+    /* Prepare Tx Frame for sending. */
+    txKeepAlive_FRAME.format = (uint8_t)kFLEXCAN_FrameFormatStandard;
+    txKeepAlive_FRAME.type   = (uint8_t)kFLEXCAN_FrameTypeData;
+    txKeepAlive_FRAME.id     = FLEXCAN_ID_STD(MSG1TxKeepAlive);
+    txKeepAlive_FRAME.length = (uint8_t)DLC;
 
 
     /* Create FlexCAN handle structure and set call back function. */
@@ -180,6 +190,47 @@ void vTaskTx10ms(void * pvParameters)
 		(void)FLEXCAN_TransferSendNonBlocking(EXAMPLE_CAN, &flexcanHandle, &txBATTERYfer);
 	 }
 }
+void vTaskTx10ms_keepAlive(void * pvParameters)
+{
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS(10);
+	xLastWakeTime = xTaskGetTickCount();
+	static uint8_t TxByte0 = 0;
+	static uint16_t TicksCounter = 0;
+
+
+	 /* Enter the loop that defines the task behavior. */
+	 for(;;){
+		 vTaskDelayUntil(&xLastWakeTime, xPeriod);
+
+		/*Increment a random value for demo*/
+		 TicksCounter++;
+		 if(TicksCounter > 300){
+			 if(TxByte0 < 100){
+				 TxByte0 += 5;
+			 }else{
+				 TxByte0 = 0;
+			 }
+			 TicksCounter = 0;
+		 }else{}
+
+		 /* Perform the periodic actions here. */
+		 txKeepAlive_FRAME.dataByte0 = 0x00;
+		 txKeepAlive_FRAME.dataByte1 = 0x01;
+		 txKeepAlive_FRAME.dataByte2 = 0x02;
+		 txKeepAlive_FRAME.dataByte3 = 0x03;
+		 txKeepAlive_FRAME.dataByte4 = 0x04;
+		 txKeepAlive_FRAME.dataByte5 = 0x05;
+		 txKeepAlive_FRAME.dataByte6 = 0x06;
+		 txKeepAlive_FRAME.dataByte7 = 0x07;
+
+		/* Send data through Tx Message Buffer. */
+		txKeepAlivefer.mbIdx = (uint8_t)TX_MESSAGE_BUFFER_NUM;
+		txKeepAlivefer.frame = &txKeepAlive_FRAME;
+		(void)FLEXCAN_TransferSendNonBlocking(EXAMPLE_CAN, &flexcanHandle, &txKeepAlivefer);
+	 }
+}
+
 
 void vTaskRx5ms(void * pvParameters)
 {
@@ -244,6 +295,9 @@ int main(void) {
     if(xTaskCreate(vTaskRx5ms,"Rxactuador",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-2),NULL) != pdPASS){
            	PRINTF("FAIL to create vTaskTx10ms");
            }
+    if(xTaskCreate(vTaskTx10ms_keepAlive,"Txkeep_alive",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-3),NULL) != pdPASS){
+            	PRINTF("FAIL to create vTaskTx10ms");
+            }
     /* Start the scheduler. */
        vTaskStartScheduler();
 

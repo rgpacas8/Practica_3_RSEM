@@ -52,6 +52,7 @@
 #define DLC                    (8)
 #define MSG1RxBATTERY          (0x25)
 #define MSG1TxActuador         (0x80)
+#define MSG1RxKeepAlive        (0x100)
 
 
 /* Fix MISRA_C-2012 Rule 17.7. */
@@ -115,12 +116,13 @@ volatile bool txComplete = pdFALSE;
 volatile bool rxComplete = pdFALSE;
 
 flexcan_handle_t flexcanHandle;
-flexcan_mb_transfer_t rxBATTERYfer,txActuadorfer;
-flexcan_frame_t rxBATTERY_FRAME,txActuador_FRAME;
+flexcan_mb_transfer_t rxBATTERYfer,txActuadorfer, rxKeepAlivefer;
+flexcan_frame_t rxBATTERY_FRAME,txActuador_FRAME, rxKeepAlive_FRAME;
 uint8_t RxMBID;
 
 uint8_t battery_lvl[4]={0};
 uint8_t actuador_MSGTX[2];
+uint8_t keep_alive;
 
 static mdio_handle_t mdioHandle = {.ops = &EXAMPLE_MDIO_OPS};
 static phy_handle_t phyHandle   = {.phyAddr = EXAMPLE_PHY_ADDRESS, .mdioHandle = &mdioHandle, .ops = &EXAMPLE_PHY_OPS};
@@ -135,7 +137,7 @@ static char client_id[40];
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = (const char *)&client_id[0],
     .client_user = "rgpacas8",
-    .client_pass = "aio_USMl37qyLu6uSJb3E6F0TVnnOw5U",
+    .client_pass = "aio_Ztfy30ZtCcc3foWAdySpRJ1AMuXE",
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,
@@ -186,6 +188,7 @@ void CAN_Init(void){
 
 	flexcan_config_t flexcanConfig;
     flexcan_rx_mb_config_t mbConfig;
+    flexcan_rx_mb_config_t mbConfig_keep_alive;
 
 	/* Init FlexCAN module. */
     /*
@@ -217,6 +220,15 @@ void CAN_Init(void){
     /* Start receive data through Rx Message Buffer. */
     rxBATTERYfer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
     rxBATTERYfer.frame = &rxBATTERY_FRAME;
+
+    /* Setup Rx Message Buffer. */
+    /*mbConfig_keep_alive.format = kFLEXCAN_FrameFormatStandard;
+    mbConfig_keep_alive.type   = kFLEXCAN_FrameTypeData;
+    mbConfig_keep_alive.id     = FLEXCAN_ID_STD(MSG1RxKeepAlive);
+    FLEXCAN_SetRxMbConfig(EXAMPLE_CAN, RX_MESSAGE_BUFFER_NUM, &mbConfig_keep_alive, true);
+
+    rxKeepAlivefer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
+    rxKeepAlivefer.frame = &rxKeepAlive_FRAME;*/
 
 
     /* Setup Tx Message Buffer. */
@@ -303,6 +315,37 @@ void vTaskRx5ms(void * pvParameters)
 	 }
 }
 
+void vTaskRxkeep_alive(void * pvParameters)
+{
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS(5);
+	xLastWakeTime = xTaskGetTickCount();
+
+	 /* Enter the loop that defines the task behavior. */
+	 for(;;){
+		 vTaskDelayUntil(&xLastWakeTime, xPeriod);
+
+		 /* Perform the periodic actions here. */
+		 (void)FLEXCAN_TransferReceiveNonBlocking(EXAMPLE_CAN, &flexcanHandle, &rxKeepAlivefer);
+		 if(rxComplete == pdTRUE){
+			 /*PRINTF("Message received from MB: %d, ID: 0x%x, data: %x,%x,%x,%x,%x,%x,%x,%x\n",
+					 RxMBID, (rxBATTERY_FRAME.id>>CAN_ID_STD_SHIFT),
+					 rxBATTERY_FRAME.dataByte0,
+					 rxBATTERY_FRAME.dataByte1,
+					 rxBATTERY_FRAME.dataByte2,
+					 rxBATTERY_FRAME.dataByte3,
+					 rxBATTERY_FRAME.dataByte4,
+					 rxBATTERY_FRAME.dataByte5,
+					 rxBATTERY_FRAME.dataByte6,
+					 rxBATTERY_FRAME.dataByte7);*/
+			 keep_alive= rxKeepAlive_FRAME.dataByte0;
+
+			 rxComplete = pdFALSE;
+		 }
+
+	 }
+}
+
 
 /*******************************************************************************
  * Code MQTT
@@ -372,8 +415,8 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
  */
 static void mqtt_subscribe_topics(mqtt_client_t *client)
 {
-    static const char *topics[] = {"rgpacas8/feeds/boton", "rgpacas8/feeds/gauge"};
-    int qos[]                   = {1, 1};
+    static const char *topics[] = {"rgpacas8/feeds/boton", "rgpacas8/feeds/gauge","rgpacas8/feeds/text"};
+    int qos[]                   = {1, 1, 1};
     err_t err;
     int i;
 
@@ -478,6 +521,7 @@ static void publish_message(void *ctx)
 {
     static const char *topic   = "rgpacas8/feeds/gauge";
     static const char *message ;
+
 
     LWIP_UNUSED_ARG(ctx);
 
@@ -656,6 +700,11 @@ int main(void)
     if(xTaskCreate(vTaskTx10ms,"BatteryLevel",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-3),NULL) != pdPASS){
          	PRINTF("FAIL to create vTaskTx10ms");
          }
+
+   /* if(xTaskCreate(vTaskRxkeep_alive,"keep_alive",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-4),NULL) != pdPASS){
+         	PRINTF("FAIL to create vTaskTx10ms");
+         }*/
+
 
     vTaskStartScheduler();
 
