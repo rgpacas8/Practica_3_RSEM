@@ -15,6 +15,7 @@
 #include "fsl_adc16.h"
 #include "fsl_flexcan.h"
 #include "ADC.h"
+#include "RGB.h"
 
 /* TODO: insert other definitions and declarations here. */
 /*******************************************************************************
@@ -24,6 +25,8 @@
  * ADC0   -> PTB_2
  * TX CAN -> PTB_18
  * RX CAN -> PTB_19
+ * https://community.st.com/s/question/0D50X00009XkWRUSA3/stm32f032-can-bus
+ * https://forum.arduino.cc/index.php?topic=148791.0
  */
 #define DEMO_ADC16_BASE          ADC0
 #define DEMO_ADC16_CHANNEL_GROUP 0U
@@ -35,16 +38,9 @@
 #define RX_MESSAGE_BUFFER_NUM  (9)
 #define TX_MESSAGE_BUFFER_NUM  (8)
 #define DLC                    (8)
-#define MSG1TxIDKEEPALIVE      (0x100)
-#define MSG1TxBATTERY          (0x25)
-#define MSG1RxACTUADOR         (0x55)
 
-/* The CAN clock prescaler = CAN source clock/(baud rate * quantum), and the prescaler must be an integer.
-   The quantum default value is set to 10=(3+2+1)+4, because for most platforms the CAN clock frequency is
-   a multiple of 10. e.g. 120M CAN source clock/(1M baud rate * 10) is an integer. If the CAN clock frequency
-   is not a multiple of 10, users need to set SET_CAN_QUANTUM and define the PSEG1/PSEG2/PROPSEG (classical CAN)
-   and FPSEG1/FPSEG2/FPROPSEG (CANFD) vaule. Or can set USE_IMPROVED_TIMING_CONFIG macro to use driver api to
-   calculates the improved timing values. */
+#define MSG1TxBATTERY          (0x25)
+#define MSG1RxActuador         (0x80)
 
 /* Fix MISRA_C-2012 Rule 17.7. */
 #define LOG_INFO (void)PRINTF
@@ -58,11 +54,11 @@
 
 volatile bool txComplete = pdFALSE;
 volatile bool rxComplete = pdFALSE;
-
 flexcan_handle_t flexcanHandle;
-flexcan_mb_transfer_t txKEEPALIVE,txBATTERY, rxACTUADOR;
-flexcan_frame_t txKEEPALIVE_FRAME,txBATTERY_FRAME, rxACTUADOR_Frame;
+flexcan_mb_transfer_t txBATTERYfer,RxActuadorfer;
+flexcan_frame_t txBATTERY_FRAME,RxActuador_FRAME;
 uint8_t RxMBID;
+
 
 static void flexcan_callback(CAN_Type *base, flexcan_handle_t *handle, status_t status, uint32_t result, void *userData)
 {
@@ -95,7 +91,6 @@ void CAN_Init(void){
 	flexcan_config_t flexcanConfig;
     flexcan_rx_mb_config_t mbConfig;
 
-
 	/* Init FlexCAN module. */
     /*
      * flexcanConfig.clkSrc                 = kFLEXCAN_ClkSrc0;
@@ -119,32 +114,112 @@ void CAN_Init(void){
     FLEXCAN_Init(EXAMPLE_CAN, &flexcanConfig, EXAMPLE_CAN_CLK_FREQ);
 
     /* Setup Rx Message Buffer. */
-    mbConfig.format = kFLEXCAN_FrameFormatStandard;
-    mbConfig.type   = kFLEXCAN_FrameTypeData;
-    mbConfig.id     = FLEXCAN_ID_STD(MSG1RxACTUADOR);
-    FLEXCAN_SetRxMbConfig(EXAMPLE_CAN, RX_MESSAGE_BUFFER_NUM, &mbConfig, true);
-    /* Start receive data through Rx Message Buffer. */
-    rxACTUADOR.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
-    rxACTUADOR.frame = &rxACTUADOR_Frame;
+       mbConfig.format = kFLEXCAN_FrameFormatStandard;
+       mbConfig.type   = kFLEXCAN_FrameTypeData;
+       mbConfig.id     = FLEXCAN_ID_STD(MSG1RxActuador);
+       FLEXCAN_SetRxMbConfig(EXAMPLE_CAN, RX_MESSAGE_BUFFER_NUM, &mbConfig, true);
+       /* Start receive data through Rx Message Buffer. */
+       RxActuadorfer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
+       RxActuadorfer.frame = &RxActuador_FRAME;
 
     /* Setup Tx Message Buffer. */
     FLEXCAN_SetTxMbConfig(EXAMPLE_CAN, TX_MESSAGE_BUFFER_NUM, true);
     /* Prepare Tx Frame for sending. */
-
-    txKEEPALIVE_FRAME.format = (uint8_t)kFLEXCAN_FrameFormatStandard;
-    txKEEPALIVE_FRAME.type   = (uint8_t)kFLEXCAN_FrameTypeData;
-    txKEEPALIVE_FRAME.id     = FLEXCAN_ID_STD(MSG1TxIDKEEPALIVE);
-    txKEEPALIVE_FRAME.length = (uint8_t)DLC;
-
     txBATTERY_FRAME.format = (uint8_t)kFLEXCAN_FrameFormatStandard;
     txBATTERY_FRAME.type   = (uint8_t)kFLEXCAN_FrameTypeData;
     txBATTERY_FRAME.id     = FLEXCAN_ID_STD(MSG1TxBATTERY);
     txBATTERY_FRAME.length = (uint8_t)DLC;
 
+
     /* Create FlexCAN handle structure and set call back function. */
     FLEXCAN_TransferCreateHandle(EXAMPLE_CAN, &flexcanHandle, flexcan_callback, NULL);
 }
 
+void vTaskTx10ms(void * pvParameters)
+{
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS(10);
+	xLastWakeTime = xTaskGetTickCount();
+	static uint8_t TxByte0 = 0;
+	static uint16_t TicksCounter = 0;
+	static uint16_t ADC_lvl;
+
+	 /* Enter the loop that defines the task behavior. */
+	 for(;;){
+		 uint8_t prueba[3];
+		 vTaskDelayUntil(&xLastWakeTime, xPeriod);
+		 ADC_lvl=ADC_value_demo();
+		 ADC_lvl=((ADC_lvl-190)*100)/3700;
+		 prueba[0] = ADC_lvl%10;
+		 prueba[1] = (ADC_lvl/10)%10;
+		 prueba[2] = (ADC_lvl/100)%10;
+		/*Increment a random value for demo*/
+		 TicksCounter++;
+		 if(TicksCounter > 300){
+			 if(TxByte0 < 100){
+				 TxByte0 += 5;
+			 }else{
+				 TxByte0 = 0;
+			 }
+			 TicksCounter = 0;
+		 }else{}
+
+		 /* Perform the periodic actions here. */
+		 txBATTERY_FRAME.dataByte0 = prueba[0]+0x30;
+		 txBATTERY_FRAME.dataByte1 = prueba[1]+0x30;
+		 txBATTERY_FRAME.dataByte2 = prueba[2]+0x30;
+		 txBATTERY_FRAME.dataByte3 = 0x03;
+		 txBATTERY_FRAME.dataByte4 = 0x04;
+		 txBATTERY_FRAME.dataByte5 = 0x05;
+		 txBATTERY_FRAME.dataByte6 = 0x06;
+		 txBATTERY_FRAME.dataByte7 = 0x07;
+
+		/* Send data through Tx Message Buffer. */
+		txBATTERYfer.mbIdx = (uint8_t)TX_MESSAGE_BUFFER_NUM;
+		txBATTERYfer.frame = &txBATTERY_FRAME;
+		(void)FLEXCAN_TransferSendNonBlocking(EXAMPLE_CAN, &flexcanHandle, &txBATTERYfer);
+	 }
+}
+
+void vTaskRx5ms(void * pvParameters)
+{
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS(5);
+	xLastWakeTime = xTaskGetTickCount();
+	static char array_actuador[2]={"0"};
+	 /* Enter the loop that defines the task behavior. */
+	 for(;;){
+		 vTaskDelayUntil(&xLastWakeTime, xPeriod);
+
+		 /* Perform the periodic actions here. */
+		 (void)FLEXCAN_TransferReceiveNonBlocking(EXAMPLE_CAN, &flexcanHandle, &RxActuadorfer);
+		 if(rxComplete == pdTRUE){
+			 /*PRINTF("Message received from MB: %d, ID: 0x%x, data: %x,%x,%x,%x,%x,%x,%x,%x\n",
+					 RxMBID, (rxBATTERY_FRAME.id>>CAN_ID_STD_SHIFT),
+					 rxBATTERY_FRAME.dataByte0,
+					 rxBATTERY_FRAME.dataByte1,
+					 rxBATTERY_FRAME.dataByte2,
+					 rxBATTERY_FRAME.dataByte3,
+					 rxBATTERY_FRAME.dataByte4,
+					 rxBATTERY_FRAME.dataByte5,
+					 rxBATTERY_FRAME.dataByte6,
+					 rxBATTERY_FRAME.dataByte7);*/
+			 printf("%d %d\n", RxActuador_FRAME.dataByte1,RxActuador_FRAME.dataByte0);//aqui lega N o F
+			 //array_actuador[0]= RxActuador_FRAME.dataByte0;
+			if (RxActuador_FRAME.dataByte1 == 78) {
+				encender_LED(GREEN_ON);
+			}
+			if (RxActuador_FRAME.dataByte1 == 70) {
+				apagar_LED(GREEN_ON);
+			}
+
+
+
+			 rxComplete = pdFALSE;
+		 }
+
+	 }
+}
 int main(void) {
 
     /* Init board hardware. */
@@ -158,11 +233,23 @@ int main(void) {
 
     ADC0_init_demo();
     CAN_Init();
+    RGB_init();
+    encender_LED(GREEN_ON);
+    apagar_LED(GREEN_OFF);
 
+    if(xTaskCreate(vTaskTx10ms,"BatteryLevel",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-1),NULL) != pdPASS){
+      	PRINTF("FAIL to create vTaskTx10ms");
+      }
+
+    if(xTaskCreate(vTaskRx5ms,"Rxactuador",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-2),NULL) != pdPASS){
+           	PRINTF("FAIL to create vTaskTx10ms");
+           }
+    /* Start the scheduler. */
+       vTaskStartScheduler();
 
     /* Enter an infinite loop, just incrementing a counter. */
-    while(1) {
-        printf("adc_value =%d\n",ADC_value_demo());
+    while(pdTRUE) {
+        //printf("adc_value =%d\n",ADC_value_demo());
     }
     return 0 ;
 }
