@@ -463,7 +463,7 @@ Discarded input sections
                 0x00000000        0x1 ./source/lwip_mqtt_freertos.o
  .text.vTaskRxkeep_alive
                 0x00000000       0x5c ./source/lwip_mqtt_freertos.o
- .bss.ADC_lvl.11362
+ .bss.ADC_lvl.11367
                 0x00000000        0x2 ./source/lwip_mqtt_freertos.o
  .debug_macro   0x00000000      0xafc ./source/lwip_mqtt_freertos.o
  .debug_macro   0x00000000       0x10 ./source/lwip_mqtt_freertos.o
@@ -12544,6 +12544,10 @@ Discarded input sections
                 0x00000000       0x33 ./drivers/fsl_flexcan.o
  .text.FLEXCAN_CalculateImprovedTimingValues
                 0x00000000       0xa0 ./drivers/fsl_flexcan.o
+ .rodata.FLEXCAN_SetRxMbConfig_keep_alive.str1.4
+                0x00000000       0xbd ./drivers/fsl_flexcan.o
+ .text.FLEXCAN_SetRxMbConfig_keep_alive
+                0x00000000       0xf8 ./drivers/fsl_flexcan.o
  .rodata.FLEXCAN_SetRxFifoConfig.str1.4
                 0x00000000       0xd8 ./drivers/fsl_flexcan.o
  .text.FLEXCAN_SetRxFifoConfig
@@ -17324,9 +17328,9 @@ END GROUP
                 0x20000000        0xc ./source/lwip_mqtt_freertos.o
  .data.phyHandle
                 0x2000000c        0xc ./source/lwip_mqtt_freertos.o
- .data.topics.11400
+ .data.topics.11405
                 0x20000018        0xc ./source/lwip_mqtt_freertos.o
- .data.topic.11434
+ .data.topic.11439
                 0x20000024        0x4 ./source/lwip_mqtt_freertos.o
  .data.dhcp_discover_request_options
                 0x20000028        0x4 ./lwip/src/core/ipv4/dhcp.o
@@ -17419,9 +17423,9 @@ END GROUP
                 0x200030fc       0x28 ./source/lwip_mqtt_freertos.o
  .bss.mqtt_addr
                 0x20003124        0x4 ./source/lwip_mqtt_freertos.o
- .bss.message.11435
+ .bss.message.11440
                 0x20003128        0x4 ./source/lwip_mqtt_freertos.o
- .bss.netif.11455
+ .bss.netif.11460
                 0x2000312c       0x3c ./source/lwip_mqtt_freertos.o
  .bss.dhcp_rx_options_val
                 0x20003168       0x28 ./lwip/src/core/ipv4/dhcp.o
@@ -17701,7 +17705,7 @@ END GROUP
                 0x2000e008                __heaps
  .bss.__Ciob    0x2000e00c       0xb4 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_semihost_nf.a(__ciob.o)
                 0x2000e00c                __Ciob
- .bss.TicksCounter.11361
+ .bss.TicksCounter.11366
                 0x2000e0c0        0x2 ./source/lwip_mqtt_freertos.o
  .bss.ip_id     0x2000e0c2        0x2 ./lwip/src/core/ipv4/ip4.o
  .bss.ip_reass_pbufcount
@@ -17725,7 +17729,7 @@ END GROUP
                 0x2000e0d2                RxMBID
  .bss.connected
                 0x2000e0d3        0x1 ./source/lwip_mqtt_freertos.o
- .bss.TxByte0.11360
+ .bss.TxByte0.11365
                 0x2000e0d4        0x1 ./source/lwip_mqtt_freertos.o
  .bss.dhcp_pcb_refcount
                 0x2000e0d5        0x1 ./lwip/src/core/ipv4/dhcp.o
@@ -17815,7 +17819,7 @@ END GROUP
 OUTPUT(P3_CAN_MQTT_LWIP_freertos_lwip_mqtt_freertos.axf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x00000000    0x4028b
+.debug_info     0x00000000    0x402f3
  .debug_info    0x00000000      0x25a ./utilities/fsl_assert.o
  .debug_info    0x0000025a      0x92e ./startup/startup_mk64f12.o
  .debug_info    0x00000b88     0x2a6b ./source/lwip_mqtt_freertos.o
@@ -17864,13 +17868,13 @@ LOAD linker stubs
  .debug_info    0x00033a46      0xeb6 ./freertos/freertos_kernel/timers.o
  .debug_info    0x000348fc     0x21e2 ./drivers/fsl_clock.o
  .debug_info    0x00036ade     0x3053 ./drivers/fsl_enet.o
- .debug_info    0x00039b31     0x242e ./drivers/fsl_flexcan.o
- .debug_info    0x0003bf5f      0x39d ./drivers/fsl_sim.o
- .debug_info    0x0003c2fc     0x1de7 ./drivers/fsl_uart.o
- .debug_info    0x0003e0e3      0x69f ./device/system_MK64F12.o
- .debug_info    0x0003e782      0x67b ./board/board.o
- .debug_info    0x0003edfd      0xc17 ./board/clock_config.o
- .debug_info    0x0003fa14      0x877 ./board/pin_mux.o
+ .debug_info    0x00039b31     0x2496 ./drivers/fsl_flexcan.o
+ .debug_info    0x0003bfc7      0x39d ./drivers/fsl_sim.o
+ .debug_info    0x0003c364     0x1de7 ./drivers/fsl_uart.o
+ .debug_info    0x0003e14b      0x69f ./device/system_MK64F12.o
+ .debug_info    0x0003e7ea      0x67b ./board/board.o
+ .debug_info    0x0003ee65      0xc17 ./board/clock_config.o
+ .debug_info    0x0003fa7c      0x877 ./board/pin_mux.o
 
 .debug_abbrev   0x00000000     0x8533
  .debug_abbrev  0x00000000       0xf8 ./utilities/fsl_assert.o
@@ -17929,7 +17933,7 @@ LOAD linker stubs
  .debug_abbrev  0x0000808c      0x233 ./board/clock_config.o
  .debug_abbrev  0x000082bf      0x274 ./board/pin_mux.o
 
-.debug_aranges  0x00000000     0x2598
+.debug_aranges  0x00000000     0x25a0
  .debug_aranges
                 0x00000000       0x20 ./utilities/fsl_assert.o
  .debug_aranges
@@ -18027,21 +18031,21 @@ LOAD linker stubs
  .debug_aranges
                 0x00001f70      0x1c0 ./drivers/fsl_enet.o
  .debug_aranges
-                0x00002130      0x1a8 ./drivers/fsl_flexcan.o
+                0x00002130      0x1b0 ./drivers/fsl_flexcan.o
  .debug_aranges
-                0x000022d8       0x28 ./drivers/fsl_sim.o
+                0x000022e0       0x28 ./drivers/fsl_sim.o
  .debug_aranges
-                0x00002300      0x1a8 ./drivers/fsl_uart.o
+                0x00002308      0x1a8 ./drivers/fsl_uart.o
  .debug_aranges
-                0x000024a8       0x30 ./device/system_MK64F12.o
+                0x000024b0       0x30 ./device/system_MK64F12.o
  .debug_aranges
-                0x000024d8       0x28 ./board/board.o
+                0x000024e0       0x28 ./board/board.o
  .debug_aranges
-                0x00002500       0x58 ./board/clock_config.o
+                0x00002508       0x58 ./board/clock_config.o
  .debug_aranges
-                0x00002558       0x40 ./board/pin_mux.o
+                0x00002560       0x40 ./board/pin_mux.o
 
-.debug_ranges   0x00000000     0x2450
+.debug_ranges   0x00000000     0x2458
  .debug_ranges  0x00000000       0x10 ./utilities/fsl_assert.o
  .debug_ranges  0x00000010      0x320 ./startup/startup_mk64f12.o
  .debug_ranges  0x00000330       0x88 ./source/lwip_mqtt_freertos.o
@@ -18089,13 +18093,13 @@ LOAD linker stubs
  .debug_ranges  0x00001bd0       0xd8 ./freertos/freertos_kernel/timers.o
  .debug_ranges  0x00001ca8      0x1e8 ./drivers/fsl_clock.o
  .debug_ranges  0x00001e90      0x1b0 ./drivers/fsl_enet.o
- .debug_ranges  0x00002040      0x1b0 ./drivers/fsl_flexcan.o
- .debug_ranges  0x000021f0       0x18 ./drivers/fsl_sim.o
- .debug_ranges  0x00002208      0x198 ./drivers/fsl_uart.o
- .debug_ranges  0x000023a0       0x20 ./device/system_MK64F12.o
- .debug_ranges  0x000023c0       0x18 ./board/board.o
- .debug_ranges  0x000023d8       0x48 ./board/clock_config.o
- .debug_ranges  0x00002420       0x30 ./board/pin_mux.o
+ .debug_ranges  0x00002040      0x1b8 ./drivers/fsl_flexcan.o
+ .debug_ranges  0x000021f8       0x18 ./drivers/fsl_sim.o
+ .debug_ranges  0x00002210      0x198 ./drivers/fsl_uart.o
+ .debug_ranges  0x000023a8       0x20 ./device/system_MK64F12.o
+ .debug_ranges  0x000023c8       0x18 ./board/board.o
+ .debug_ranges  0x000023e0       0x48 ./board/clock_config.o
+ .debug_ranges  0x00002428       0x30 ./board/pin_mux.o
 
 .debug_macro    0x00000000    0x1ff0a
  .debug_macro   0x00000000      0x1a1 ./utilities/fsl_assert.o
@@ -18283,7 +18287,7 @@ LOAD linker stubs
  .debug_macro   0x0001fcad      0x149 ./board/clock_config.o
  .debug_macro   0x0001fdf6      0x114 ./board/pin_mux.o
 
-.debug_line     0x00000000    0x2d36e
+.debug_line     0x00000000    0x2d3e6
  .debug_line    0x00000000      0x5f3 ./utilities/fsl_assert.o
  .debug_line    0x000005f3      0x90e ./startup/startup_mk64f12.o
  .debug_line    0x00000f01     0x1066 ./source/lwip_mqtt_freertos.o
@@ -18332,15 +18336,15 @@ LOAD linker stubs
  .debug_line    0x00025ebd      0xa24 ./freertos/freertos_kernel/timers.o
  .debug_line    0x000268e1     0x14b8 ./drivers/fsl_clock.o
  .debug_line    0x00027d99     0x188c ./drivers/fsl_enet.o
- .debug_line    0x00029625     0x136a ./drivers/fsl_flexcan.o
- .debug_line    0x0002a98f      0x338 ./drivers/fsl_sim.o
- .debug_line    0x0002acc7     0x13de ./drivers/fsl_uart.o
- .debug_line    0x0002c0a5      0x3e3 ./device/system_MK64F12.o
- .debug_line    0x0002c488      0x684 ./board/board.o
- .debug_line    0x0002cb0c      0x446 ./board/clock_config.o
- .debug_line    0x0002cf52      0x41c ./board/pin_mux.o
+ .debug_line    0x00029625     0x13e2 ./drivers/fsl_flexcan.o
+ .debug_line    0x0002aa07      0x338 ./drivers/fsl_sim.o
+ .debug_line    0x0002ad3f     0x13de ./drivers/fsl_uart.o
+ .debug_line    0x0002c11d      0x3e3 ./device/system_MK64F12.o
+ .debug_line    0x0002c500      0x684 ./board/board.o
+ .debug_line    0x0002cb84      0x446 ./board/clock_config.o
+ .debug_line    0x0002cfca      0x41c ./board/pin_mux.o
 
-.debug_str      0x00000000    0xa3e07
+.debug_str      0x00000000    0xa3e28
  .debug_str     0x00000000    0x7d44c ./utilities/fsl_assert.o
                               0x7d4ff (size before relaxing)
  .debug_str     0x0007d44c      0x7c4 ./startup/startup_mk64f12.o
@@ -18437,19 +18441,19 @@ LOAD linker stubs
                               0x7c248 (size before relaxing)
  .debug_str     0x000a0b53      0x922 ./drivers/fsl_enet.o
                               0x7c96a (size before relaxing)
- .debug_str     0x000a1475     0x121c ./drivers/fsl_flexcan.o
-                              0x7d213 (size before relaxing)
- .debug_str     0x000a2691       0xff ./drivers/fsl_sim.o
+ .debug_str     0x000a1475     0x123d ./drivers/fsl_flexcan.o
+                              0x7d234 (size before relaxing)
+ .debug_str     0x000a26b2       0xff ./drivers/fsl_sim.o
                               0x79cd1 (size before relaxing)
- .debug_str     0x000a2790      0xe6d ./drivers/fsl_uart.o
+ .debug_str     0x000a27b1      0xe6d ./drivers/fsl_uart.o
                               0x7bb1c (size before relaxing)
- .debug_str     0x000a35fd       0xbb ./device/system_MK64F12.o
+ .debug_str     0x000a361e       0xbb ./device/system_MK64F12.o
                               0x784bd (size before relaxing)
- .debug_str     0x000a36b8       0xc7 ./board/board.o
+ .debug_str     0x000a36d9       0xc7 ./board/board.o
                               0x7e6b4 (size before relaxing)
- .debug_str     0x000a377f      0x306 ./board/clock_config.o
+ .debug_str     0x000a37a0      0x306 ./board/clock_config.o
                               0x7abc1 (size before relaxing)
- .debug_str     0x000a3a85      0x382 ./board/pin_mux.o
+ .debug_str     0x000a3aa6      0x382 ./board/pin_mux.o
                               0x7a9e3 (size before relaxing)
 
 .comment        0x00000000       0x4c
@@ -18713,7 +18717,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00001116       0x20 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_semihost_nf.a(__sys_write.o)
 
-.debug_frame    0x00000000     0x92cc
+.debug_frame    0x00000000     0x92f0
  .debug_frame   0x00000000       0x30 ./utilities/fsl_assert.o
  .debug_frame   0x00000030      0x904 ./startup/startup_mk64f12.o
  .debug_frame   0x00000934      0x258 ./source/lwip_mqtt_freertos.o
@@ -18761,13 +18765,13 @@ LOAD linker stubs
  .debug_frame   0x00006d34      0x3d4 ./freertos/freertos_kernel/timers.o
  .debug_frame   0x00007108      0x890 ./drivers/fsl_clock.o
  .debug_frame   0x00007998      0x7b8 ./drivers/fsl_enet.o
- .debug_frame   0x00008150      0x768 ./drivers/fsl_flexcan.o
- .debug_frame   0x000088b8       0x60 ./drivers/fsl_sim.o
- .debug_frame   0x00008918      0x6fc ./drivers/fsl_uart.o
- .debug_frame   0x00009014       0x74 ./device/system_MK64F12.o
- .debug_frame   0x00009088       0x5c ./board/board.o
- .debug_frame   0x000090e4      0x124 ./board/clock_config.o
- .debug_frame   0x00009208       0xc4 ./board/pin_mux.o
+ .debug_frame   0x00008150      0x78c ./drivers/fsl_flexcan.o
+ .debug_frame   0x000088dc       0x60 ./drivers/fsl_sim.o
+ .debug_frame   0x0000893c      0x6fc ./drivers/fsl_uart.o
+ .debug_frame   0x00009038       0x74 ./device/system_MK64F12.o
+ .debug_frame   0x000090ac       0x5c ./board/board.o
+ .debug_frame   0x00009108      0x124 ./board/clock_config.o
+ .debug_frame   0x0000922c       0xc4 ./board/pin_mux.o
 
 Cross Reference Table
 
@@ -18995,6 +18999,7 @@ FLEXCAN_SetRxFifoGlobalMask                       ./drivers/fsl_flexcan.o
 FLEXCAN_SetRxIndividualMask                       ./drivers/fsl_flexcan.o
 FLEXCAN_SetRxMbConfig                             ./drivers/fsl_flexcan.o
                                                   ./source/lwip_mqtt_freertos.o
+FLEXCAN_SetRxMbConfig_keep_alive                  ./drivers/fsl_flexcan.o
 FLEXCAN_SetRxMbGlobalMask                         ./drivers/fsl_flexcan.o
 FLEXCAN_SetTimingConfig                           ./drivers/fsl_flexcan.o
 FLEXCAN_SetTxMbConfig                             ./drivers/fsl_flexcan.o

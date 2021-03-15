@@ -1905,6 +1905,47 @@ void FLEXCAN_SetRxMbConfig(CAN_Type *base, uint8_t mbIdx, const flexcan_rx_mb_co
         base->MB[mbIdx].CS = cs_temp;
     }
 }
+void FLEXCAN_SetRxMbConfig_keep_alive(CAN_Type *base, uint8_t mbIdx, const flexcan_rx_mb_config_t *pRxMbConfig, bool enable)
+{
+    /* Assertion. */
+    assert(mbIdx <= (base->MCR & CAN_MCR_MAXMB_MASK));
+    assert(((NULL != pRxMbConfig) || (false == enable)));
+#if !defined(NDEBUG)
+    assert(!FLEXCAN_IsMbOccupied(base, mbIdx));
+#endif
+
+    uint32_t cs_temp = 0;
+
+    /* Inactivate Message Buffer. */
+    base->MB[mbIdx].CS = 0;
+
+    /* Clean Message Buffer content. */
+    base->MB[mbIdx].ID    = 0x0;
+    base->MB[mbIdx].WORD0 = 0x0;
+    base->MB[mbIdx].WORD1 = 0x0;
+
+    if (enable)
+    {
+        /* Setup Message Buffer ID. */
+        base->MB[mbIdx].ID = pRxMbConfig->id;
+
+        /* Setup Message Buffer format. */
+        if (kFLEXCAN_FrameFormatExtend == pRxMbConfig->format)
+        {
+            cs_temp |= CAN_CS_IDE_MASK;
+        }
+
+        /* Setup Message Buffer type. */
+        if (kFLEXCAN_FrameTypeRemote == pRxMbConfig->type)
+        {
+            cs_temp |= CAN_CS_RTR_MASK;
+        }
+
+        /* Activate Rx Message Buffer. */
+        cs_temp |= CAN_CS_CODE(kFLEXCAN_RxMbEmpty);
+        base->MB[mbIdx].CS = cs_temp;
+    }
+}
 
 #if (defined(FSL_FEATURE_FLEXCAN_HAS_FLEXIBLE_DATA_RATE) && FSL_FEATURE_FLEXCAN_HAS_FLEXIBLE_DATA_RATE)
 /*!
