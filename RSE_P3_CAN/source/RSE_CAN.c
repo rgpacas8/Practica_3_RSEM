@@ -23,8 +23,16 @@
  ******************************************************************************/
 /*
  * ADC0   -> PTB_2
- * TX CAN -> PTB_18
- * RX CAN -> PTB_19
+ * TX CAN -> PTB_18 ->pin 4 MCP2551
+ * RX CAN -> PTB_19 ->pin 1 MCP2551
+ *
+ * 			MCP2551
+ * 			  ----
+* 		 1  -|	  |-8
+* 		 2  -|	  |-7
+* 		 3  -|	  |-6
+* 		 4  -| 	  |-5
+ * 			  ----
  * https://community.st.com/s/question/0D50X00009XkWRUSA3/stm32f032-can-bus
  * https://forum.arduino.cc/index.php?topic=148791.0
  */

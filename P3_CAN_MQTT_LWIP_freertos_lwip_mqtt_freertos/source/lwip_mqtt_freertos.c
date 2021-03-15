@@ -137,7 +137,7 @@ static char client_id[40];
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = (const char *)&client_id[0],
     .client_user = "rgpacas8",
-    .client_pass = "aio_mlnN83XBFJfGUMV8W4VMIWOdfcQL",
+    .client_pass = "aio_nTiC153Vpx7ylWSiOFwjUguSLXzu",
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,
@@ -212,6 +212,16 @@ void CAN_Init(void){
     flexcanConfig.baudRate = 125000U;
     FLEXCAN_Init(EXAMPLE_CAN, &flexcanConfig, EXAMPLE_CAN_CLK_FREQ);
 
+
+    /* Setup Rx Message Buffer. */
+ /*    mbConfig_keep_alive.format = kFLEXCAN_FrameFormatStandard;
+     mbConfig_keep_alive.type   = kFLEXCAN_FrameTypeData;
+     mbConfig_keep_alive.id     = FLEXCAN_ID_STD(MSG1RxKeepAlive);
+     FLEXCAN_SetRxMbConfig_keep_alive(EXAMPLE_CAN, RX_MESSAGE_BUFFER_NUM, &mbConfig_keep_alive, true);
+     rxKeepAlivefer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
+     rxKeepAlivefer.frame = &rxKeepAlive_FRAME;*/
+
+
     /* Setup Rx Message Buffer. */
     mbConfig.format = kFLEXCAN_FrameFormatStandard;
     mbConfig.type   = kFLEXCAN_FrameTypeData;
@@ -221,13 +231,7 @@ void CAN_Init(void){
     rxBATTERYfer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
     rxBATTERYfer.frame = &rxBATTERY_FRAME;
 
-    /* Setup Rx Message Buffer. */
-   /* mbConfig_keep_alive.format = kFLEXCAN_FrameFormatStandard;
-    mbConfig_keep_alive.type   = kFLEXCAN_FrameTypeData;
-    mbConfig_keep_alive.id     = FLEXCAN_ID_STD(MSG1RxKeepAlive);
-    FLEXCAN_SetRxMbConfig_keep_alive(EXAMPLE_CAN, RX_MESSAGE_BUFFER_NUM, &mbConfig_keep_alive, true);
-    rxKeepAlivefer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
-    rxKeepAlivefer.frame = &rxKeepAlive_FRAME;*/
+
 
 
     /* Setup Tx Message Buffer. */
@@ -700,9 +704,9 @@ int main(void)
          	PRINTF("FAIL to create vTaskTx10ms");
          }
 
-   /* if(xTaskCreate(vTaskRxkeep_alive,"keep_alive",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-4),NULL) != pdPASS){
+   if(xTaskCreate(vTaskRxkeep_alive,"keep_alive",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-4),NULL) != pdPASS){
          	PRINTF("FAIL to create vTaskTx10ms");
-         }*/
+         }
 
 
     vTaskStartScheduler();
