@@ -37,9 +37,26 @@
 #include "fsl_device_registers.h"
 #include "fsl_phyksz8081.h"
 #include "fsl_enet_mdio.h"
+/* TODO: insert other include files here. */
+
+#include "fsl_flexcan.h"
+
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
+#define EXAMPLE_CAN            CAN0
+#define EXAMPLE_CAN_CLK_SOURCE (kFLEXCAN_ClkSrc1)
+#define EXAMPLE_CAN_CLK_FREQ   CLOCK_GetFreq(kCLOCK_BusClk)
+#define RX_MESSAGE_BUFFER_NUM  (9)
+#define TX_MESSAGE_BUFFER_NUM  (8)
+#define DLC                    (8)
+#define MSG1RxBATTERY          (0x25)
+
+
+
+
+/* Fix MISRA_C-2012 Rule 17.7. */
+#define LOG_INFO (void)PRINTF
 
 /* MAC address configuration. */
 #define configMAC_ADDR                     \
@@ -95,6 +112,15 @@ static void connect_to_mqtt(void *ctx);
 /*******************************************************************************
  * Variables
  ******************************************************************************/
+volatile bool txComplete = pdFALSE;
+volatile bool rxComplete = pdFALSE;
+
+flexcan_handle_t flexcanHandle;
+flexcan_mb_transfer_t rxBATTERYfer;
+flexcan_frame_t rxBATTERY_FRAME;
+uint8_t RxMBID;
+
+uint8_t baetery=0;
 
 static mdio_handle_t mdioHandle = {.ops = &EXAMPLE_MDIO_OPS};
 static phy_handle_t phyHandle   = {.phyAddr = EXAMPLE_PHY_ADDRESS, .mdioHandle = &mdioHandle, .ops = &EXAMPLE_PHY_OPS};
@@ -108,8 +134,8 @@ static char client_id[40];
 /*! @brief MQTT client information. */
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = (const char *)&client_id[0],
-    .client_user = NULL,
-    .client_pass = NULL,
+    .client_user = "rgpacas8",
+    .client_pass = "aio_nqPe49gjIUa5IfxsfKEra94X1tdC",
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,
@@ -127,7 +153,108 @@ static ip_addr_t mqtt_addr;
 static volatile bool connected = false;
 
 /*******************************************************************************
- * Code
+ * Code CAN
+ ******************************************************************************/
+
+static void flexcan_callback(CAN_Type *base, flexcan_handle_t *handle, status_t status, uint32_t result, void *userData)
+{
+	switch (status)
+    {
+        /* Process FlexCAN Rx event. */
+        case kStatus_FLEXCAN_RxIdle:
+            if (RX_MESSAGE_BUFFER_NUM == result)
+            {
+            	RxMBID = RX_MESSAGE_BUFFER_NUM;
+            	rxComplete = pdTRUE;
+            }
+            break;
+
+        /* Process FlexCAN Tx event. */
+        case kStatus_FLEXCAN_TxIdle:
+            if (TX_MESSAGE_BUFFER_NUM == result)
+            {
+                txComplete = pdTRUE;
+            }
+            break;
+
+        default:
+            break;
+    }
+}
+
+void CAN_Init(void){
+
+	flexcan_config_t flexcanConfig;
+    flexcan_rx_mb_config_t mbConfig;
+
+	/* Init FlexCAN module. */
+    /*
+     * flexcanConfig.clkSrc                 = kFLEXCAN_ClkSrc0;
+     * flexcanConfig.baudRate               = 1000000U;
+     * flexcanConfig.baudRateFD             = 2000000U;
+     * flexcanConfig.maxMbNum               = 16;
+     * flexcanConfig.enableLoopBack         = false;
+     * flexcanConfig.enableSelfWakeup       = false;
+     * flexcanConfig.enableIndividMask      = false;
+     * flexcanConfig.disableSelfReception   = false;
+     * flexcanConfig.enableListenOnlyMode   = false;
+     * flexcanConfig.enableDoze             = false;
+     */
+    FLEXCAN_GetDefaultConfig(&flexcanConfig);
+
+#if defined(EXAMPLE_CAN_CLK_SOURCE)
+    flexcanConfig.clkSrc = EXAMPLE_CAN_CLK_SOURCE;
+#endif
+    /*Change CAN BR to 125kbps*/
+    flexcanConfig.baudRate = 125000U;
+    FLEXCAN_Init(EXAMPLE_CAN, &flexcanConfig, EXAMPLE_CAN_CLK_FREQ);
+
+    /* Setup Rx Message Buffer. */
+    mbConfig.format = kFLEXCAN_FrameFormatStandard;
+    mbConfig.type   = kFLEXCAN_FrameTypeData;
+    mbConfig.id     = FLEXCAN_ID_STD(MSG1RxBATTERY);
+    FLEXCAN_SetRxMbConfig(EXAMPLE_CAN, RX_MESSAGE_BUFFER_NUM, &mbConfig, true);
+    /* Start receive data through Rx Message Buffer. */
+    rxBATTERYfer.mbIdx = (uint8_t)RX_MESSAGE_BUFFER_NUM;
+    rxBATTERYfer.frame = &rxBATTERY_FRAME;
+
+
+    /* Create FlexCAN handle structure and set call back function. */
+    FLEXCAN_TransferCreateHandle(EXAMPLE_CAN, &flexcanHandle, flexcan_callback, NULL);
+}
+
+void vTaskRx5ms(void * pvParameters)
+{
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS(5);
+	xLastWakeTime = xTaskGetTickCount();
+
+	 /* Enter the loop that defines the task behavior. */
+	 for(;;){
+		 vTaskDelayUntil(&xLastWakeTime, xPeriod);
+
+		 /* Perform the periodic actions here. */
+		 (void)FLEXCAN_TransferReceiveNonBlocking(EXAMPLE_CAN, &flexcanHandle, &rxBATTERYfer);
+		 if(rxComplete == pdTRUE){
+			 PRINTF("Message received from MB: %d, ID: 0x%x, data: %x,%x,%x,%x,%x,%x,%x,%x\n",
+					 RxMBID, (rxBATTERY_FRAME.id>>CAN_ID_STD_SHIFT),
+					 rxBATTERY_FRAME.dataByte0,
+					 rxBATTERY_FRAME.dataByte1,
+					 rxBATTERY_FRAME.dataByte2,
+					 rxBATTERY_FRAME.dataByte3,
+					 rxBATTERY_FRAME.dataByte4,
+					 rxBATTERY_FRAME.dataByte5,
+					 rxBATTERY_FRAME.dataByte6,
+					 rxBATTERY_FRAME.dataByte7);
+
+			 rxComplete = pdFALSE;
+		 }
+
+	 }
+}
+
+/*******************************************************************************
+ * Code MQTT
  ******************************************************************************/
 
 /*!
@@ -189,8 +316,8 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
  */
 static void mqtt_subscribe_topics(mqtt_client_t *client)
 {
-    static const char *topics[] = {"lwip_topic/#", "lwip_other/#"};
-    int qos[]                   = {0, 1};
+    static const char *topics[] = {"rgpacas8/feeds/text", "rgpacas8/feeds/gauge"};
+    int qos[]                   = {1, 1};
     err_t err;
     int i;
 
@@ -368,7 +495,7 @@ static void app_thread(void *arg)
     }
 
     /* Publish some messages */
-    for (i = 0; i < 5;)
+    for (;;)
     {
         if (connected)
         {
@@ -457,12 +584,15 @@ int main(void)
     PRINTF("\r\n************************************************\r\n");
     PRINTF(" MQTT client example\r\n");
     PRINTF("************************************************\r\n");
+    CAN_Init();
 
-    if (sys_thread_new("app_task", app_thread, &netif, APP_THREAD_STACKSIZE, APP_THREAD_PRIO) == NULL)
+   /* if (sys_thread_new("app_task", app_thread, &netif, APP_THREAD_STACKSIZE, APP_THREAD_PRIO) == NULL)
     {
         LWIP_ASSERT("main(): Task creation failed.", 0);
-    }
-
+    }*/
+    if(xTaskCreate(vTaskRx5ms,"RxBatteryLevel10ms",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-1),NULL) != pdPASS){
+        	PRINTF("FAIL to create vTaskTx10ms");
+        }
     vTaskStartScheduler();
 
     /* Will not get here unless a task calls vTaskEndScheduler ()*/
