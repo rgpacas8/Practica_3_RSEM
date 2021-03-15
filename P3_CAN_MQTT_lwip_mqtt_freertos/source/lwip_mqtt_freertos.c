@@ -38,7 +38,7 @@
 #include "fsl_phyksz8081.h"
 #include "fsl_enet_mdio.h"
 /* TODO: insert other include files here. */
-
+#include "string.h"
 #include "fsl_flexcan.h"
 
 /*******************************************************************************
@@ -51,8 +51,7 @@
 #define TX_MESSAGE_BUFFER_NUM  (8)
 #define DLC                    (8)
 #define MSG1RxBATTERY          (0x25)
-
-
+#define MSG1TxActuador         (0x80)
 
 
 /* Fix MISRA_C-2012 Rule 17.7. */
@@ -92,7 +91,7 @@
 #endif /* EXAMPLE_NETIF_INIT_FN */
 
 /*! @brief MQTT server host name or IP address. */
-#define EXAMPLE_MQTT_SERVER_HOST "broker.hivemq.com"
+#define EXAMPLE_MQTT_SERVER_HOST "io.adafruit.com"
 
 /*! @brief MQTT server port number. */
 #define EXAMPLE_MQTT_SERVER_PORT 1883
@@ -116,11 +115,12 @@ volatile bool txComplete = pdFALSE;
 volatile bool rxComplete = pdFALSE;
 
 flexcan_handle_t flexcanHandle;
-flexcan_mb_transfer_t rxBATTERYfer;
-flexcan_frame_t rxBATTERY_FRAME;
+flexcan_mb_transfer_t rxBATTERYfer,txActuadorfer;
+flexcan_frame_t rxBATTERY_FRAME,txActuador_FRAME;
 uint8_t RxMBID;
 
-uint8_t baetery=0;
+uint8_t battery_lvl[4]={0};
+uint8_t actuador_MSGTX[2];
 
 static mdio_handle_t mdioHandle = {.ops = &EXAMPLE_MDIO_OPS};
 static phy_handle_t phyHandle   = {.phyAddr = EXAMPLE_PHY_ADDRESS, .mdioHandle = &mdioHandle, .ops = &EXAMPLE_PHY_OPS};
@@ -135,7 +135,7 @@ static char client_id[40];
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = (const char *)&client_id[0],
     .client_user = "rgpacas8",
-    .client_pass = "aio_nqPe49gjIUa5IfxsfKEra94X1tdC",
+    .client_pass = "aio_DBDw28y3eJoQlORm7Fd44m57kRXo",
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,
@@ -219,10 +219,57 @@ void CAN_Init(void){
     rxBATTERYfer.frame = &rxBATTERY_FRAME;
 
 
+    /* Setup Tx Message Buffer. */
+        FLEXCAN_SetTxMbConfig(EXAMPLE_CAN, TX_MESSAGE_BUFFER_NUM, true);
+        /* Prepare Tx Frame for sending. */
+        txActuador_FRAME.format = (uint8_t)kFLEXCAN_FrameFormatStandard;
+        txActuador_FRAME.type   = (uint8_t)kFLEXCAN_FrameTypeData;
+        txActuador_FRAME.id     = FLEXCAN_ID_STD(MSG1TxActuador);
+        txActuador_FRAME.length = (uint8_t)DLC;
+
     /* Create FlexCAN handle structure and set call back function. */
     FLEXCAN_TransferCreateHandle(EXAMPLE_CAN, &flexcanHandle, flexcan_callback, NULL);
 }
+void vTaskTx10ms(void * pvParameters)
+{
+	TickType_t xLastWakeTime;
+	const TickType_t xPeriod = pdMS_TO_TICKS(10);
+	xLastWakeTime = xTaskGetTickCount();
+	static uint8_t TxByte0 = 0;
+	static uint16_t TicksCounter = 0;
+	static uint16_t ADC_lvl;
 
+	 /* Enter the loop that defines the task behavior. */
+	 for(;;){
+
+		 vTaskDelayUntil(&xLastWakeTime, xPeriod);
+		/*Increment a random value for demo*/
+		 TicksCounter++;
+		 if(TicksCounter > 300){
+			 if(TxByte0 < 100){
+				 TxByte0 += 5;
+			 }else{
+				 TxByte0 = 0;
+			 }
+			 TicksCounter = 0;
+		 }else{}
+
+		 /* Perform the periodic actions here. */
+		 txActuador_FRAME.dataByte0 = actuador_MSGTX[0];
+		 txActuador_FRAME.dataByte1 = actuador_MSGTX[1];
+		 txActuador_FRAME.dataByte2 = 0x02;
+		 txActuador_FRAME.dataByte3 = 0x03;
+		 txActuador_FRAME.dataByte4 = 0x04;
+		 txActuador_FRAME.dataByte5 = 0x05;
+		 txActuador_FRAME.dataByte6 = 0x06;
+		 txActuador_FRAME.dataByte7 = 0x07;
+
+		/* Send data through Tx Message Buffer. */
+		txActuadorfer.mbIdx = (uint8_t)TX_MESSAGE_BUFFER_NUM;
+		txActuadorfer.frame = &txActuador_FRAME;
+		(void)FLEXCAN_TransferSendNonBlocking(EXAMPLE_CAN, &flexcanHandle, &txActuadorfer);
+	 }
+}
 void vTaskRx5ms(void * pvParameters)
 {
 	TickType_t xLastWakeTime;
@@ -236,7 +283,7 @@ void vTaskRx5ms(void * pvParameters)
 		 /* Perform the periodic actions here. */
 		 (void)FLEXCAN_TransferReceiveNonBlocking(EXAMPLE_CAN, &flexcanHandle, &rxBATTERYfer);
 		 if(rxComplete == pdTRUE){
-			 PRINTF("Message received from MB: %d, ID: 0x%x, data: %x,%x,%x,%x,%x,%x,%x,%x\n",
+			 /*PRINTF("Message received from MB: %d, ID: 0x%x, data: %x,%x,%x,%x,%x,%x,%x,%x\n",
 					 RxMBID, (rxBATTERY_FRAME.id>>CAN_ID_STD_SHIFT),
 					 rxBATTERY_FRAME.dataByte0,
 					 rxBATTERY_FRAME.dataByte1,
@@ -245,13 +292,17 @@ void vTaskRx5ms(void * pvParameters)
 					 rxBATTERY_FRAME.dataByte4,
 					 rxBATTERY_FRAME.dataByte5,
 					 rxBATTERY_FRAME.dataByte6,
-					 rxBATTERY_FRAME.dataByte7);
-
+					 rxBATTERY_FRAME.dataByte7);*/
+			 battery_lvl[2]= rxBATTERY_FRAME.dataByte0;
+			 battery_lvl[1]= rxBATTERY_FRAME.dataByte1;
+			 battery_lvl[0]= rxBATTERY_FRAME.dataByte2;
+			 battery_lvl[3]= 0x00;
 			 rxComplete = pdFALSE;
 		 }
 
 	 }
 }
+
 
 /*******************************************************************************
  * Code MQTT
@@ -290,25 +341,30 @@ static void mqtt_incoming_publish_cb(void *arg, const char *topic, u32_t tot_len
 static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t flags)
 {
     int i;
-
+    char dato_entrante[len];
     LWIP_UNUSED_ARG(arg);
 
     for (i = 0; i < len; i++)
     {
         if (isprint(data[i]))
         {
+        	actuador_MSGTX[i] = data[i];
             PRINTF("%c", (char)data[i]);
         }
         else
         {
             PRINTF("\\x%02x", data[i]);
         }
-    }
+    };
 
     if (flags & MQTT_DATA_FLAG_LAST)
     {
         PRINTF("\"\r\n");
-    }
+    };
+
+
+
+
 }
 
 /*!
@@ -316,7 +372,7 @@ static void mqtt_incoming_data_cb(void *arg, const u8_t *data, u16_t len, u8_t f
  */
 static void mqtt_subscribe_topics(mqtt_client_t *client)
 {
-    static const char *topics[] = {"rgpacas8/feeds/text", "rgpacas8/feeds/gauge"};
+    static const char *topics[] = {"rgpacas8/feeds/boton", "rgpacas8/feeds/gauge"};
     int qos[]                   = {1, 1};
     err_t err;
     int i;
@@ -420,13 +476,13 @@ static void mqtt_message_published_cb(void *arg, err_t err)
  */
 static void publish_message(void *ctx)
 {
-    static const char *topic   = "lwip_topic/100";
-    static const char *message = "message from board";
+    static const char *topic   = "rgpacas8/feeds/gauge";
+    static const char *message ;
 
     LWIP_UNUSED_ARG(ctx);
 
     PRINTF("Going to publish to the topic \"%s\"...\r\n", topic);
-
+    message=battery_lvl;
     mqtt_publish(mqtt_client, topic, message, strlen(message), 1, 0, mqtt_message_published_cb, (void *)topic);
 }
 
@@ -499,6 +555,7 @@ static void app_thread(void *arg)
     {
         if (connected)
         {
+        	//vTaskRx5ms();
             err = tcpip_callback(publish_message, NULL);
             if (err != ERR_OK)
             {
@@ -507,7 +564,7 @@ static void app_thread(void *arg)
             i++;
         }
 
-        sys_msleep(1000U);
+        sys_msleep(6000U);
     }
 
     vTaskDelete(NULL);
@@ -530,6 +587,8 @@ static void generate_client_id(void)
         }
     }
 }
+
+
 
 /*!
  * @brief Main function
@@ -586,13 +645,18 @@ int main(void)
     PRINTF("************************************************\r\n");
     CAN_Init();
 
-   /* if (sys_thread_new("app_task", app_thread, &netif, APP_THREAD_STACKSIZE, APP_THREAD_PRIO) == NULL)
+    if (sys_thread_new("app_task", app_thread, &netif, APP_THREAD_STACKSIZE, APP_THREAD_PRIO) == NULL)
     {
         LWIP_ASSERT("main(): Task creation failed.", 0);
-    }*/
-    if(xTaskCreate(vTaskRx5ms,"RxBatteryLevel10ms",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-1),NULL) != pdPASS){
+    }
+    if(xTaskCreate(vTaskRx5ms,"RxBatteryLevel10ms",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-2),NULL) != pdPASS){
         	PRINTF("FAIL to create vTaskTx10ms");
         }
+
+    if(xTaskCreate(vTaskTx10ms,"BatteryLevel",(configMINIMAL_STACK_SIZE+100),NULL,(configMAX_PRIORITIES-3),NULL) != pdPASS){
+         	PRINTF("FAIL to create vTaskTx10ms");
+         }
+
     vTaskStartScheduler();
 
     /* Will not get here unless a task calls vTaskEndScheduler ()*/
