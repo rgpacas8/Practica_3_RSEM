@@ -135,7 +135,7 @@ static char client_id[40];
 static const struct mqtt_connect_client_info_t mqtt_client_info = {
     .client_id   = (const char *)&client_id[0],
     .client_user = "rgpacas8",
-    .client_pass = "aio_DBDw28y3eJoQlORm7Fd44m57kRXo",
+    .client_pass = "aio_USMl37qyLu6uSJb3E6F0TVnnOw5U",
     .keep_alive  = 100,
     .will_topic  = NULL,
     .will_msg    = NULL,

@@ -234,8 +234,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c ./utilities/fsl_debug_console.o
  .debug_macro   0x00000000       0xd2 ./utilities/fsl_debug_console.o
  .debug_macro   0x00000000       0x1c ./utilities/fsl_debug_console.o
- .debug_line    0x00000000      0x768 ./utilities/fsl_debug_console.o
- .debug_str     0x00000000    0x801a9 ./utilities/fsl_debug_console.o
+ .debug_line    0x00000000      0x790 ./utilities/fsl_debug_console.o
+ .debug_str     0x00000000    0x801ae ./utilities/fsl_debug_console.o
  .comment       0x00000000       0x4d ./utilities/fsl_debug_console.o
  .debug_frame   0x00000000       0xc4 ./utilities/fsl_debug_console.o
  .ARM.attributes
@@ -337,8 +337,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x10f ./utilities/fsl_str.o
  .debug_macro   0x00000000      0x174 ./utilities/fsl_str.o
  .debug_macro   0x00000000       0x4f ./utilities/fsl_str.o
- .debug_line    0x00000000      0xd03 ./utilities/fsl_str.o
- .debug_str     0x00000000    0x7a9bc ./utilities/fsl_str.o
+ .debug_line    0x00000000      0xd12 ./utilities/fsl_str.o
+ .debug_str     0x00000000    0x7a9c1 ./utilities/fsl_str.o
  .comment       0x00000000       0x4d ./utilities/fsl_str.o
  .debug_frame   0x00000000      0x388 ./utilities/fsl_str.o
  .ARM.attributes
@@ -721,8 +721,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/auth.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/auth.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/auth.o
- .debug_line    0x00000000      0x773 ./lwip/src/netif/ppp/auth.o
- .debug_str     0x00000000    0x82003 ./lwip/src/netif/ppp/auth.o
+ .debug_line    0x00000000      0x7af ./lwip/src/netif/ppp/auth.o
+ .debug_str     0x00000000    0x82008 ./lwip/src/netif/ppp/auth.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/auth.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/auth.o
@@ -830,8 +830,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/ccp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/ccp.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/ccp.o
- .debug_line    0x00000000      0x772 ./lwip/src/netif/ppp/ccp.o
- .debug_str     0x00000000    0x82002 ./lwip/src/netif/ppp/ccp.o
+ .debug_line    0x00000000      0x7ae ./lwip/src/netif/ppp/ccp.o
+ .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/ccp.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/ccp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/ccp.o
@@ -939,8 +939,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/chap-md5.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/chap-md5.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/chap-md5.o
- .debug_line    0x00000000      0x777 ./lwip/src/netif/ppp/chap-md5.o
- .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/chap-md5.o
+ .debug_line    0x00000000      0x7b3 ./lwip/src/netif/ppp/chap-md5.o
+ .debug_str     0x00000000    0x8200c ./lwip/src/netif/ppp/chap-md5.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/chap-md5.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/chap-md5.o
@@ -1048,8 +1048,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/chap-new.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/chap-new.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/chap-new.o
- .debug_line    0x00000000      0x777 ./lwip/src/netif/ppp/chap-new.o
- .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/chap-new.o
+ .debug_line    0x00000000      0x7b3 ./lwip/src/netif/ppp/chap-new.o
+ .debug_str     0x00000000    0x8200c ./lwip/src/netif/ppp/chap-new.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/chap-new.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/chap-new.o
@@ -1157,8 +1157,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/chap_ms.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/chap_ms.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/chap_ms.o
- .debug_line    0x00000000      0x776 ./lwip/src/netif/ppp/chap_ms.o
- .debug_str     0x00000000    0x82006 ./lwip/src/netif/ppp/chap_ms.o
+ .debug_line    0x00000000      0x7b2 ./lwip/src/netif/ppp/chap_ms.o
+ .debug_str     0x00000000    0x8200b ./lwip/src/netif/ppp/chap_ms.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/chap_ms.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/chap_ms.o
@@ -1266,8 +1266,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/demand.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/demand.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/demand.o
- .debug_line    0x00000000      0x775 ./lwip/src/netif/ppp/demand.o
- .debug_str     0x00000000    0x82005 ./lwip/src/netif/ppp/demand.o
+ .debug_line    0x00000000      0x7b1 ./lwip/src/netif/ppp/demand.o
+ .debug_str     0x00000000    0x8200a ./lwip/src/netif/ppp/demand.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/demand.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/demand.o
@@ -1375,8 +1375,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/eap.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/eap.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/eap.o
- .debug_line    0x00000000      0x772 ./lwip/src/netif/ppp/eap.o
- .debug_str     0x00000000    0x82002 ./lwip/src/netif/ppp/eap.o
+ .debug_line    0x00000000      0x7ae ./lwip/src/netif/ppp/eap.o
+ .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/eap.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/eap.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/eap.o
@@ -1484,8 +1484,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/eui64.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/eui64.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/eui64.o
- .debug_line    0x00000000      0x774 ./lwip/src/netif/ppp/eui64.o
- .debug_str     0x00000000    0x82004 ./lwip/src/netif/ppp/eui64.o
+ .debug_line    0x00000000      0x7b0 ./lwip/src/netif/ppp/eui64.o
+ .debug_str     0x00000000    0x82009 ./lwip/src/netif/ppp/eui64.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/eui64.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/eui64.o
@@ -1593,8 +1593,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/fsm.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/fsm.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/fsm.o
- .debug_line    0x00000000      0x772 ./lwip/src/netif/ppp/fsm.o
- .debug_str     0x00000000    0x82002 ./lwip/src/netif/ppp/fsm.o
+ .debug_line    0x00000000      0x7ae ./lwip/src/netif/ppp/fsm.o
+ .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/fsm.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/fsm.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/fsm.o
@@ -1702,8 +1702,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/ipcp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/ipcp.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/ipcp.o
- .debug_line    0x00000000      0x773 ./lwip/src/netif/ppp/ipcp.o
- .debug_str     0x00000000    0x82003 ./lwip/src/netif/ppp/ipcp.o
+ .debug_line    0x00000000      0x7af ./lwip/src/netif/ppp/ipcp.o
+ .debug_str     0x00000000    0x82008 ./lwip/src/netif/ppp/ipcp.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/ipcp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/ipcp.o
@@ -1811,8 +1811,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/ipv6cp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/ipv6cp.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/ipv6cp.o
- .debug_line    0x00000000      0x775 ./lwip/src/netif/ppp/ipv6cp.o
- .debug_str     0x00000000    0x82005 ./lwip/src/netif/ppp/ipv6cp.o
+ .debug_line    0x00000000      0x7b1 ./lwip/src/netif/ppp/ipv6cp.o
+ .debug_str     0x00000000    0x8200a ./lwip/src/netif/ppp/ipv6cp.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/ipv6cp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/ipv6cp.o
@@ -1920,8 +1920,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/lcp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/lcp.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/lcp.o
- .debug_line    0x00000000      0x772 ./lwip/src/netif/ppp/lcp.o
- .debug_str     0x00000000    0x82002 ./lwip/src/netif/ppp/lcp.o
+ .debug_line    0x00000000      0x7ae ./lwip/src/netif/ppp/lcp.o
+ .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/lcp.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/lcp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/lcp.o
@@ -2029,8 +2029,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/lwip_ecp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/lwip_ecp.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/lwip_ecp.o
- .debug_line    0x00000000      0x777 ./lwip/src/netif/ppp/lwip_ecp.o
- .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/lwip_ecp.o
+ .debug_line    0x00000000      0x7b3 ./lwip/src/netif/ppp/lwip_ecp.o
+ .debug_str     0x00000000    0x8200c ./lwip/src/netif/ppp/lwip_ecp.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/lwip_ecp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/lwip_ecp.o
@@ -2138,8 +2138,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/magic.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/magic.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/magic.o
- .debug_line    0x00000000      0x774 ./lwip/src/netif/ppp/magic.o
- .debug_str     0x00000000    0x82004 ./lwip/src/netif/ppp/magic.o
+ .debug_line    0x00000000      0x7b0 ./lwip/src/netif/ppp/magic.o
+ .debug_str     0x00000000    0x82009 ./lwip/src/netif/ppp/magic.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/magic.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/magic.o
@@ -2247,8 +2247,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/mppe.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/mppe.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/mppe.o
- .debug_line    0x00000000      0x773 ./lwip/src/netif/ppp/mppe.o
- .debug_str     0x00000000    0x82003 ./lwip/src/netif/ppp/mppe.o
+ .debug_line    0x00000000      0x7af ./lwip/src/netif/ppp/mppe.o
+ .debug_str     0x00000000    0x82008 ./lwip/src/netif/ppp/mppe.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/mppe.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/mppe.o
@@ -2356,8 +2356,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/multilink.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/multilink.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/multilink.o
- .debug_line    0x00000000      0x778 ./lwip/src/netif/ppp/multilink.o
- .debug_str     0x00000000    0x82008 ./lwip/src/netif/ppp/multilink.o
+ .debug_line    0x00000000      0x7b4 ./lwip/src/netif/ppp/multilink.o
+ .debug_str     0x00000000    0x8200d ./lwip/src/netif/ppp/multilink.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/multilink.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/multilink.o
@@ -2465,8 +2465,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/ppp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/ppp.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/ppp.o
- .debug_line    0x00000000      0x772 ./lwip/src/netif/ppp/ppp.o
- .debug_str     0x00000000    0x82002 ./lwip/src/netif/ppp/ppp.o
+ .debug_line    0x00000000      0x7ae ./lwip/src/netif/ppp/ppp.o
+ .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/ppp.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/ppp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/ppp.o
@@ -2574,8 +2574,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/pppapi.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/pppapi.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/pppapi.o
- .debug_line    0x00000000      0x775 ./lwip/src/netif/ppp/pppapi.o
- .debug_str     0x00000000    0x82005 ./lwip/src/netif/ppp/pppapi.o
+ .debug_line    0x00000000      0x7b1 ./lwip/src/netif/ppp/pppapi.o
+ .debug_str     0x00000000    0x8200a ./lwip/src/netif/ppp/pppapi.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/pppapi.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/pppapi.o
@@ -2683,8 +2683,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/pppcrypt.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/pppcrypt.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/pppcrypt.o
- .debug_line    0x00000000      0x777 ./lwip/src/netif/ppp/pppcrypt.o
- .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/pppcrypt.o
+ .debug_line    0x00000000      0x7b3 ./lwip/src/netif/ppp/pppcrypt.o
+ .debug_str     0x00000000    0x8200c ./lwip/src/netif/ppp/pppcrypt.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/pppcrypt.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/pppcrypt.o
@@ -2792,8 +2792,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/pppoe.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/pppoe.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/pppoe.o
- .debug_line    0x00000000      0x774 ./lwip/src/netif/ppp/pppoe.o
- .debug_str     0x00000000    0x82004 ./lwip/src/netif/ppp/pppoe.o
+ .debug_line    0x00000000      0x7b0 ./lwip/src/netif/ppp/pppoe.o
+ .debug_str     0x00000000    0x82009 ./lwip/src/netif/ppp/pppoe.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/pppoe.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/pppoe.o
@@ -2901,8 +2901,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/pppol2tp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/pppol2tp.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/pppol2tp.o
- .debug_line    0x00000000      0x777 ./lwip/src/netif/ppp/pppol2tp.o
- .debug_str     0x00000000    0x82007 ./lwip/src/netif/ppp/pppol2tp.o
+ .debug_line    0x00000000      0x7b3 ./lwip/src/netif/ppp/pppol2tp.o
+ .debug_str     0x00000000    0x8200c ./lwip/src/netif/ppp/pppol2tp.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/pppol2tp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/pppol2tp.o
@@ -3010,8 +3010,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/pppos.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/pppos.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/pppos.o
- .debug_line    0x00000000      0x774 ./lwip/src/netif/ppp/pppos.o
- .debug_str     0x00000000    0x82004 ./lwip/src/netif/ppp/pppos.o
+ .debug_line    0x00000000      0x7b0 ./lwip/src/netif/ppp/pppos.o
+ .debug_str     0x00000000    0x82009 ./lwip/src/netif/ppp/pppos.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/pppos.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/pppos.o
@@ -3119,8 +3119,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/upap.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/upap.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/upap.o
- .debug_line    0x00000000      0x773 ./lwip/src/netif/ppp/upap.o
- .debug_str     0x00000000    0x82003 ./lwip/src/netif/ppp/upap.o
+ .debug_line    0x00000000      0x7af ./lwip/src/netif/ppp/upap.o
+ .debug_str     0x00000000    0x82008 ./lwip/src/netif/ppp/upap.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/upap.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/upap.o
@@ -3228,8 +3228,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/utils.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/utils.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/utils.o
- .debug_line    0x00000000      0x774 ./lwip/src/netif/ppp/utils.o
- .debug_str     0x00000000    0x82004 ./lwip/src/netif/ppp/utils.o
+ .debug_line    0x00000000      0x7b0 ./lwip/src/netif/ppp/utils.o
+ .debug_str     0x00000000    0x82009 ./lwip/src/netif/ppp/utils.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/utils.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/utils.o
@@ -3337,8 +3337,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/ppp/vj.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/ppp/vj.o
  .debug_macro   0x00000000       0x35 ./lwip/src/netif/ppp/vj.o
- .debug_line    0x00000000      0x771 ./lwip/src/netif/ppp/vj.o
- .debug_str     0x00000000    0x82001 ./lwip/src/netif/ppp/vj.o
+ .debug_line    0x00000000      0x7ad ./lwip/src/netif/ppp/vj.o
+ .debug_str     0x00000000    0x82006 ./lwip/src/netif/ppp/vj.o
  .comment       0x00000000       0x4d ./lwip/src/netif/ppp/vj.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/ppp/vj.o
@@ -3492,8 +3492,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./lwip/src/netif/bridgeif.o
  .debug_macro   0x00000000       0x16 ./lwip/src/netif/bridgeif.o
  .debug_macro   0x00000000       0xc0 ./lwip/src/netif/bridgeif.o
- .debug_line    0x00000000      0x93d ./lwip/src/netif/bridgeif.o
- .debug_str     0x00000000    0x86b3b ./lwip/src/netif/bridgeif.o
+ .debug_line    0x00000000      0x983 ./lwip/src/netif/bridgeif.o
+ .debug_str     0x00000000    0x86b40 ./lwip/src/netif/bridgeif.o
  .comment       0x00000000       0x4d ./lwip/src/netif/bridgeif.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/bridgeif.o
@@ -3652,8 +3652,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x15b ./lwip/src/netif/bridgeif_fdb.o
  .debug_macro   0x00000000      0x14b ./lwip/src/netif/bridgeif_fdb.o
  .debug_macro   0x00000000       0x22 ./lwip/src/netif/bridgeif_fdb.o
- .debug_line    0x00000000      0xb11 ./lwip/src/netif/bridgeif_fdb.o
- .debug_str     0x00000000    0x86235 ./lwip/src/netif/bridgeif_fdb.o
+ .debug_line    0x00000000      0xb57 ./lwip/src/netif/bridgeif_fdb.o
+ .debug_str     0x00000000    0x8623a ./lwip/src/netif/bridgeif_fdb.o
  .comment       0x00000000       0x4d ./lwip/src/netif/bridgeif_fdb.o
  .debug_frame   0x00000000       0xc8 ./lwip/src/netif/bridgeif_fdb.o
  .ARM.attributes
@@ -3900,8 +3900,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/lowpan6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/lowpan6.o
  .debug_macro   0x00000000       0x46 ./lwip/src/netif/lowpan6.o
- .debug_line    0x00000000      0x77f ./lwip/src/netif/lowpan6.o
- .debug_str     0x00000000    0x82103 ./lwip/src/netif/lowpan6.o
+ .debug_line    0x00000000      0x7bb ./lwip/src/netif/lowpan6.o
+ .debug_str     0x00000000    0x82108 ./lwip/src/netif/lowpan6.o
  .comment       0x00000000       0x4d ./lwip/src/netif/lowpan6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/lowpan6.o
@@ -4009,8 +4009,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/lowpan6_ble.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/lowpan6_ble.o
  .debug_macro   0x00000000       0x46 ./lwip/src/netif/lowpan6_ble.o
- .debug_line    0x00000000      0x787 ./lwip/src/netif/lowpan6_ble.o
- .debug_str     0x00000000    0x8210b ./lwip/src/netif/lowpan6_ble.o
+ .debug_line    0x00000000      0x7c3 ./lwip/src/netif/lowpan6_ble.o
+ .debug_str     0x00000000    0x82110 ./lwip/src/netif/lowpan6_ble.o
  .comment       0x00000000       0x4d ./lwip/src/netif/lowpan6_ble.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/lowpan6_ble.o
@@ -4118,8 +4118,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/lowpan6_common.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/lowpan6_common.o
  .debug_macro   0x00000000       0x46 ./lwip/src/netif/lowpan6_common.o
- .debug_line    0x00000000      0x78d ./lwip/src/netif/lowpan6_common.o
- .debug_str     0x00000000    0x82111 ./lwip/src/netif/lowpan6_common.o
+ .debug_line    0x00000000      0x7c9 ./lwip/src/netif/lowpan6_common.o
+ .debug_str     0x00000000    0x82116 ./lwip/src/netif/lowpan6_common.o
  .comment       0x00000000       0x4d ./lwip/src/netif/lowpan6_common.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/lowpan6_common.o
@@ -4251,8 +4251,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x15b ./lwip/src/netif/slipif.o
  .debug_macro   0x00000000      0x14b ./lwip/src/netif/slipif.o
  .debug_macro   0x00000000       0x16 ./lwip/src/netif/slipif.o
- .debug_line    0x00000000      0x858 ./lwip/src/netif/slipif.o
- .debug_str     0x00000000    0x85557 ./lwip/src/netif/slipif.o
+ .debug_line    0x00000000      0x899 ./lwip/src/netif/slipif.o
+ .debug_str     0x00000000    0x8555c ./lwip/src/netif/slipif.o
  .comment       0x00000000       0x4d ./lwip/src/netif/slipif.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/slipif.o
@@ -4360,8 +4360,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/netif/zepif.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/netif/zepif.o
  .debug_macro   0x00000000       0x4c ./lwip/src/netif/zepif.o
- .debug_line    0x00000000      0x788 ./lwip/src/netif/zepif.o
- .debug_str     0x00000000    0x82113 ./lwip/src/netif/zepif.o
+ .debug_line    0x00000000      0x7c4 ./lwip/src/netif/zepif.o
+ .debug_str     0x00000000    0x82118 ./lwip/src/netif/zepif.o
  .comment       0x00000000       0x4d ./lwip/src/netif/zepif.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/netif/zepif.o
@@ -4467,8 +4467,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/dhcp6.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/dhcp6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/dhcp6.o
- .debug_line    0x00000000      0x712 ./lwip/src/core/ipv6/dhcp6.o
- .debug_str     0x00000000    0x81f2b ./lwip/src/core/ipv6/dhcp6.o
+ .debug_line    0x00000000      0x749 ./lwip/src/core/ipv6/dhcp6.o
+ .debug_str     0x00000000    0x81f30 ./lwip/src/core/ipv6/dhcp6.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/dhcp6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/dhcp6.o
@@ -4574,8 +4574,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/ethip6.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/ethip6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/ethip6.o
- .debug_line    0x00000000      0x713 ./lwip/src/core/ipv6/ethip6.o
- .debug_str     0x00000000    0x81f2c ./lwip/src/core/ipv6/ethip6.o
+ .debug_line    0x00000000      0x74a ./lwip/src/core/ipv6/ethip6.o
+ .debug_str     0x00000000    0x81f31 ./lwip/src/core/ipv6/ethip6.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/ethip6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/ethip6.o
@@ -4681,8 +4681,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/icmp6.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/icmp6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/icmp6.o
- .debug_line    0x00000000      0x712 ./lwip/src/core/ipv6/icmp6.o
- .debug_str     0x00000000    0x81f2b ./lwip/src/core/ipv6/icmp6.o
+ .debug_line    0x00000000      0x749 ./lwip/src/core/ipv6/icmp6.o
+ .debug_str     0x00000000    0x81f30 ./lwip/src/core/ipv6/icmp6.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/icmp6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/icmp6.o
@@ -4788,8 +4788,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/inet6.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/inet6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/inet6.o
- .debug_line    0x00000000      0x712 ./lwip/src/core/ipv6/inet6.o
- .debug_str     0x00000000    0x81f2b ./lwip/src/core/ipv6/inet6.o
+ .debug_line    0x00000000      0x749 ./lwip/src/core/ipv6/inet6.o
+ .debug_str     0x00000000    0x81f30 ./lwip/src/core/ipv6/inet6.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/inet6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/inet6.o
@@ -4895,8 +4895,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/ip6.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/ip6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/ip6.o
- .debug_line    0x00000000      0x710 ./lwip/src/core/ipv6/ip6.o
- .debug_str     0x00000000    0x81f29 ./lwip/src/core/ipv6/ip6.o
+ .debug_line    0x00000000      0x747 ./lwip/src/core/ipv6/ip6.o
+ .debug_str     0x00000000    0x81f2e ./lwip/src/core/ipv6/ip6.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/ip6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/ip6.o
@@ -5002,8 +5002,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/ip6_addr.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/ip6_addr.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/ip6_addr.o
- .debug_line    0x00000000      0x715 ./lwip/src/core/ipv6/ip6_addr.o
- .debug_str     0x00000000    0x81f2e ./lwip/src/core/ipv6/ip6_addr.o
+ .debug_line    0x00000000      0x74c ./lwip/src/core/ipv6/ip6_addr.o
+ .debug_str     0x00000000    0x81f33 ./lwip/src/core/ipv6/ip6_addr.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/ip6_addr.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/ip6_addr.o
@@ -5143,8 +5143,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x28 ./lwip/src/core/ipv6/ip6_frag.o
  .debug_macro   0x00000000       0x2e ./lwip/src/core/ipv6/ip6_frag.o
  .debug_macro   0x00000000       0xea ./lwip/src/core/ipv6/ip6_frag.o
- .debug_line    0x00000000      0x8ae ./lwip/src/core/ipv6/ip6_frag.o
- .debug_str     0x00000000    0x862e5 ./lwip/src/core/ipv6/ip6_frag.o
+ .debug_line    0x00000000      0x8ef ./lwip/src/core/ipv6/ip6_frag.o
+ .debug_str     0x00000000    0x862ea ./lwip/src/core/ipv6/ip6_frag.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/ip6_frag.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/ip6_frag.o
@@ -5250,8 +5250,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/mld6.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/mld6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/mld6.o
- .debug_line    0x00000000      0x711 ./lwip/src/core/ipv6/mld6.o
- .debug_str     0x00000000    0x81f2a ./lwip/src/core/ipv6/mld6.o
+ .debug_line    0x00000000      0x748 ./lwip/src/core/ipv6/mld6.o
+ .debug_str     0x00000000    0x81f2f ./lwip/src/core/ipv6/mld6.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/mld6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/mld6.o
@@ -5357,8 +5357,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv6/nd6.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv6/nd6.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv6/nd6.o
- .debug_line    0x00000000      0x710 ./lwip/src/core/ipv6/nd6.o
- .debug_str     0x00000000    0x81f29 ./lwip/src/core/ipv6/nd6.o
+ .debug_line    0x00000000      0x747 ./lwip/src/core/ipv6/nd6.o
+ .debug_str     0x00000000    0x81f2e ./lwip/src/core/ipv6/nd6.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv6/nd6.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv6/nd6.o
@@ -5599,8 +5599,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv4/autoip.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv4/autoip.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv4/autoip.o
- .debug_line    0x00000000      0x713 ./lwip/src/core/ipv4/autoip.o
- .debug_str     0x00000000    0x81f2c ./lwip/src/core/ipv4/autoip.o
+ .debug_line    0x00000000      0x74a ./lwip/src/core/ipv4/autoip.o
+ .debug_str     0x00000000    0x81f31 ./lwip/src/core/ipv4/autoip.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv4/autoip.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv4/autoip.o
@@ -6151,8 +6151,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/ipv4/igmp.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/ipv4/igmp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/ipv4/igmp.o
- .debug_line    0x00000000      0x711 ./lwip/src/core/ipv4/igmp.o
- .debug_str     0x00000000    0x81f2a ./lwip/src/core/ipv4/igmp.o
+ .debug_line    0x00000000      0x748 ./lwip/src/core/ipv4/igmp.o
+ .debug_str     0x00000000    0x81f2f ./lwip/src/core/ipv4/igmp.o
  .comment       0x00000000       0x4d ./lwip/src/core/ipv4/igmp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/ipv4/igmp.o
@@ -6662,8 +6662,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/altcp.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/altcp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/altcp.o
- .debug_line    0x00000000      0x70d ./lwip/src/core/altcp.o
- .debug_str     0x00000000    0x81f26 ./lwip/src/core/altcp.o
+ .debug_line    0x00000000      0x744 ./lwip/src/core/altcp.o
+ .debug_str     0x00000000    0x81f2b ./lwip/src/core/altcp.o
  .comment       0x00000000       0x4d ./lwip/src/core/altcp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/altcp.o
@@ -6769,8 +6769,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/altcp_alloc.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/altcp_alloc.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/altcp_alloc.o
- .debug_line    0x00000000      0x713 ./lwip/src/core/altcp_alloc.o
- .debug_str     0x00000000    0x81f2c ./lwip/src/core/altcp_alloc.o
+ .debug_line    0x00000000      0x74a ./lwip/src/core/altcp_alloc.o
+ .debug_str     0x00000000    0x81f31 ./lwip/src/core/altcp_alloc.o
  .comment       0x00000000       0x4d ./lwip/src/core/altcp_alloc.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/altcp_alloc.o
@@ -6876,8 +6876,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/altcp_tcp.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/altcp_tcp.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/altcp_tcp.o
- .debug_line    0x00000000      0x711 ./lwip/src/core/altcp_tcp.o
- .debug_str     0x00000000    0x81f2a ./lwip/src/core/altcp_tcp.o
+ .debug_line    0x00000000      0x748 ./lwip/src/core/altcp_tcp.o
+ .debug_str     0x00000000    0x81f2f ./lwip/src/core/altcp_tcp.o
  .comment       0x00000000       0x4d ./lwip/src/core/altcp_tcp.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/altcp_tcp.o
@@ -8442,8 +8442,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x82 ./lwip/src/core/stats.o
  .debug_macro   0x00000000       0x73 ./lwip/src/core/stats.o
  .debug_macro   0x00000000      0x6fb ./lwip/src/core/stats.o
- .debug_line    0x00000000      0x70d ./lwip/src/core/stats.o
- .debug_str     0x00000000    0x81f26 ./lwip/src/core/stats.o
+ .debug_line    0x00000000      0x744 ./lwip/src/core/stats.o
+ .debug_str     0x00000000    0x81f2b ./lwip/src/core/stats.o
  .comment       0x00000000       0x4d ./lwip/src/core/stats.o
  .ARM.attributes
                 0x00000000       0x39 ./lwip/src/core/stats.o
@@ -10113,8 +10113,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./lwip/src/api/err.o
  .debug_macro   0x00000000       0x73 ./lwip/src/api/err.o
  .debug_macro   0x00000000      0x320 ./lwip/src/api/err.o
- .debug_line    0x00000000      0x780 ./lwip/src/api/err.o
- .debug_str     0x00000000    0x83622 ./lwip/src/api/err.o
+ .debug_line    0x00000000      0x7b7 ./lwip/src/api/err.o
+ .debug_str     0x00000000    0x83627 ./lwip/src/api/err.o
  .comment       0x00000000       0x4d ./lwip/src/api/err.o
  .debug_frame   0x00000000       0x60 ./lwip/src/api/err.o
  .ARM.attributes
@@ -10298,8 +10298,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x149 ./lwip/src/api/if_api.o
  .debug_macro   0x00000000      0x45a ./lwip/src/api/if_api.o
  .debug_macro   0x00000000       0x24 ./lwip/src/api/if_api.o
- .debug_line    0x00000000      0x9ee ./lwip/src/api/if_api.o
- .debug_str     0x00000000    0x8aa0b ./lwip/src/api/if_api.o
+ .debug_line    0x00000000      0xa2f ./lwip/src/api/if_api.o
+ .debug_str     0x00000000    0x8aa10 ./lwip/src/api/if_api.o
  .comment       0x00000000       0x4d ./lwip/src/api/if_api.o
  .debug_frame   0x00000000       0x58 ./lwip/src/api/if_api.o
  .ARM.attributes
@@ -10461,8 +10461,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x25 ./lwip/src/api/netbuf.o
  .debug_macro   0x00000000      0x15b ./lwip/src/api/netbuf.o
  .debug_macro   0x00000000       0x22 ./lwip/src/api/netbuf.o
- .debug_line    0x00000000      0xa00 ./lwip/src/api/netbuf.o
- .debug_str     0x00000000    0x85004 ./lwip/src/api/netbuf.o
+ .debug_line    0x00000000      0xa3c ./lwip/src/api/netbuf.o
+ .debug_str     0x00000000    0x85009 ./lwip/src/api/netbuf.o
  .comment       0x00000000       0x4d ./lwip/src/api/netbuf.o
  .debug_frame   0x00000000      0x154 ./lwip/src/api/netbuf.o
  .ARM.attributes
@@ -10633,8 +10633,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x73 ./lwip/src/api/netdb.o
  .debug_macro   0x00000000      0x120 ./lwip/src/api/netdb.o
  .debug_macro   0x00000000       0x2e ./lwip/src/api/netdb.o
- .debug_line    0x00000000      0xa6f ./lwip/src/api/netdb.o
- .debug_str     0x00000000    0x89aa8 ./lwip/src/api/netdb.o
+ .debug_line    0x00000000      0xaab ./lwip/src/api/netdb.o
+ .debug_str     0x00000000    0x89aad ./lwip/src/api/netdb.o
  .comment       0x00000000       0x4d ./lwip/src/api/netdb.o
  .debug_frame   0x00000000       0xa0 ./lwip/src/api/netdb.o
  .ARM.attributes
@@ -11130,8 +11130,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x4d ./lwip/src/api/sockets.o
  .debug_macro   0x00000000       0x16 ./lwip/src/api/sockets.o
  .debug_macro   0x00000000       0x4c ./lwip/src/api/sockets.o
- .debug_line    0x00000000     0x25a4 ./lwip/src/api/sockets.o
- .debug_str     0x00000000    0x8cef9 ./lwip/src/api/sockets.o
+ .debug_line    0x00000000     0x25e5 ./lwip/src/api/sockets.o
+ .debug_str     0x00000000    0x8cefe ./lwip/src/api/sockets.o
  .comment       0x00000000       0x4d ./lwip/src/api/sockets.o
  .debug_frame   0x00000000      0x7e0 ./lwip/src/api/sockets.o
  .ARM.attributes
@@ -11819,8 +11819,8 @@ Discarded input sections
  .debug_macro   0x00000000       0xb5 ./freertos/freertos_kernel/croutine.o
  .debug_macro   0x00000000       0xaa ./freertos/freertos_kernel/croutine.o
  .debug_macro   0x00000000       0x43 ./freertos/freertos_kernel/croutine.o
- .debug_line    0x00000000      0x322 ./freertos/freertos_kernel/croutine.o
- .debug_str     0x00000000     0x87ec ./freertos/freertos_kernel/croutine.o
+ .debug_line    0x00000000      0x331 ./freertos/freertos_kernel/croutine.o
+ .debug_str     0x00000000     0x87f1 ./freertos/freertos_kernel/croutine.o
  .comment       0x00000000       0x4d ./freertos/freertos_kernel/croutine.o
  .ARM.attributes
                 0x00000000       0x39 ./freertos/freertos_kernel/croutine.o
@@ -12043,8 +12043,8 @@ Discarded input sections
  .debug_macro   0x00000000       0xb5 ./freertos/freertos_kernel/stream_buffer.o
  .debug_macro   0x00000000       0xaa ./freertos/freertos_kernel/stream_buffer.o
  .debug_macro   0x00000000       0x18 ./freertos/freertos_kernel/stream_buffer.o
- .debug_line    0x00000000      0xc13 ./freertos/freertos_kernel/stream_buffer.o
- .debug_str     0x00000000     0x90cd ./freertos/freertos_kernel/stream_buffer.o
+ .debug_line    0x00000000      0xc22 ./freertos/freertos_kernel/stream_buffer.o
+ .debug_str     0x00000000     0x90d2 ./freertos/freertos_kernel/stream_buffer.o
  .comment       0x00000000       0x4d ./freertos/freertos_kernel/stream_buffer.o
  .debug_frame   0x00000000      0x3a0 ./freertos/freertos_kernel/stream_buffer.o
  .ARM.attributes
@@ -12377,8 +12377,8 @@ Discarded input sections
  .debug_macro   0x00000000     0x12c5 ./drivers/fsl_common.o
  .debug_macro   0x00000000      0x10f ./drivers/fsl_common.o
  .debug_macro   0x00000000      0x174 ./drivers/fsl_common.o
- .debug_line    0x00000000      0x3c9 ./drivers/fsl_common.o
- .debug_str     0x00000000    0x79c10 ./drivers/fsl_common.o
+ .debug_line    0x00000000      0x3d3 ./drivers/fsl_common.o
+ .debug_str     0x00000000    0x79c15 ./drivers/fsl_common.o
  .comment       0x00000000       0x4d ./drivers/fsl_common.o
  .debug_frame   0x00000000       0xa8 ./drivers/fsl_common.o
  .ARM.attributes
@@ -12645,8 +12645,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x2e ./drivers/fsl_ftfx_cache.o
  .debug_macro   0x00000000       0x7c ./drivers/fsl_ftfx_cache.o
  .debug_macro   0x00000000       0x10 ./drivers/fsl_ftfx_cache.o
- .debug_line    0x00000000      0x488 ./drivers/fsl_ftfx_cache.o
- .debug_str     0x00000000    0x7bdb2 ./drivers/fsl_ftfx_cache.o
+ .debug_line    0x00000000      0x492 ./drivers/fsl_ftfx_cache.o
+ .debug_str     0x00000000    0x7bdb7 ./drivers/fsl_ftfx_cache.o
  .comment       0x00000000       0x4d ./drivers/fsl_ftfx_cache.o
  .debug_frame   0x00000000      0x138 ./drivers/fsl_ftfx_cache.o
  .ARM.attributes
@@ -12764,8 +12764,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x2e ./drivers/fsl_ftfx_controller.o
  .debug_macro   0x00000000       0x7c ./drivers/fsl_ftfx_controller.o
  .debug_macro   0x00000000       0x10 ./drivers/fsl_ftfx_controller.o
- .debug_line    0x00000000      0xc7b ./drivers/fsl_ftfx_controller.o
- .debug_str     0x00000000    0x7c978 ./drivers/fsl_ftfx_controller.o
+ .debug_line    0x00000000      0xc85 ./drivers/fsl_ftfx_controller.o
+ .debug_str     0x00000000    0x7c97d ./drivers/fsl_ftfx_controller.o
  .comment       0x00000000       0x4d ./drivers/fsl_ftfx_controller.o
  .debug_frame   0x00000000      0x40c ./drivers/fsl_ftfx_controller.o
  .ARM.attributes
@@ -12887,8 +12887,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x7c ./drivers/fsl_ftfx_flash.o
  .debug_macro   0x00000000       0x10 ./drivers/fsl_ftfx_flash.o
  .debug_macro   0x00000000       0x1c ./drivers/fsl_ftfx_flash.o
- .debug_line    0x00000000      0xa3e ./drivers/fsl_ftfx_flash.o
- .debug_str     0x00000000    0x7cbe6 ./drivers/fsl_ftfx_flash.o
+ .debug_line    0x00000000      0xa48 ./drivers/fsl_ftfx_flash.o
+ .debug_str     0x00000000    0x7cbeb ./drivers/fsl_ftfx_flash.o
  .comment       0x00000000       0x4d ./drivers/fsl_ftfx_flash.o
  .debug_frame   0x00000000      0x430 ./drivers/fsl_ftfx_flash.o
  .ARM.attributes
@@ -12945,8 +12945,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x2e ./drivers/fsl_ftfx_flexnvm.o
  .debug_macro   0x00000000       0x7c ./drivers/fsl_ftfx_flexnvm.o
  .debug_macro   0x00000000       0x10 ./drivers/fsl_ftfx_flexnvm.o
- .debug_line    0x00000000      0x352 ./drivers/fsl_ftfx_flexnvm.o
- .debug_str     0x00000000    0x7ad28 ./drivers/fsl_ftfx_flexnvm.o
+ .debug_line    0x00000000      0x35c ./drivers/fsl_ftfx_flexnvm.o
+ .debug_str     0x00000000    0x7ad2d ./drivers/fsl_ftfx_flexnvm.o
  .comment       0x00000000       0x4d ./drivers/fsl_ftfx_flexnvm.o
  .ARM.attributes
                 0x00000000       0x39 ./drivers/fsl_ftfx_flexnvm.o
@@ -13015,8 +13015,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x10f ./drivers/fsl_gpio.o
  .debug_macro   0x00000000      0x174 ./drivers/fsl_gpio.o
  .debug_macro   0x00000000       0x10 ./drivers/fsl_gpio.o
- .debug_line    0x00000000      0x3da ./drivers/fsl_gpio.o
- .debug_str     0x00000000    0x7a559 ./drivers/fsl_gpio.o
+ .debug_line    0x00000000      0x3e4 ./drivers/fsl_gpio.o
+ .debug_str     0x00000000    0x7a55e ./drivers/fsl_gpio.o
  .comment       0x00000000       0x4d ./drivers/fsl_gpio.o
  .debug_frame   0x00000000       0xc8 ./drivers/fsl_gpio.o
  .ARM.attributes
@@ -13141,8 +13141,8 @@ Discarded input sections
  .debug_macro   0x00000000     0x12c5 ./drivers/fsl_smc.o
  .debug_macro   0x00000000      0x10f ./drivers/fsl_smc.o
  .debug_macro   0x00000000      0x174 ./drivers/fsl_smc.o
- .debug_line    0x00000000      0x5c7 ./drivers/fsl_smc.o
- .debug_str     0x00000000    0x7a860 ./drivers/fsl_smc.o
+ .debug_line    0x00000000      0x5d1 ./drivers/fsl_smc.o
+ .debug_str     0x00000000    0x7a865 ./drivers/fsl_smc.o
  .comment       0x00000000       0x4d ./drivers/fsl_smc.o
  .debug_frame   0x00000000      0x224 ./drivers/fsl_smc.o
  .ARM.attributes
@@ -13431,8 +13431,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x26 ./component/uart/fsl_adapter_uart.o
  .debug_macro   0x00000000      0x3a0 ./component/uart/fsl_adapter_uart.o
  .debug_macro   0x00000000       0x2e ./component/uart/fsl_adapter_uart.o
- .debug_line    0x00000000      0x66f ./component/uart/fsl_adapter_uart.o
- .debug_str     0x00000000    0x7d82c ./component/uart/fsl_adapter_uart.o
+ .debug_line    0x00000000      0x68d ./component/uart/fsl_adapter_uart.o
+ .debug_str     0x00000000    0x7d831 ./component/uart/fsl_adapter_uart.o
  .comment       0x00000000       0x4d ./component/uart/fsl_adapter_uart.o
  .debug_frame   0x00000000      0x110 ./component/uart/fsl_adapter_uart.o
  .ARM.attributes
@@ -13534,8 +13534,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x2e ./component/serial_manager/fsl_component_serial_manager.o
  .debug_macro   0x00000000       0x10 ./component/serial_manager/fsl_component_serial_manager.o
  .debug_macro   0x00000000       0x66 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_line    0x00000000      0x8f7 ./component/serial_manager/fsl_component_serial_manager.o
- .debug_str     0x00000000    0x7d812 ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_line    0x00000000      0x91a ./component/serial_manager/fsl_component_serial_manager.o
+ .debug_str     0x00000000    0x7d817 ./component/serial_manager/fsl_component_serial_manager.o
  .comment       0x00000000       0x4d ./component/serial_manager/fsl_component_serial_manager.o
  .debug_frame   0x00000000      0x258 ./component/serial_manager/fsl_component_serial_manager.o
  .ARM.attributes
@@ -13617,8 +13617,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x2e ./component/serial_manager/fsl_component_serial_port_uart.o
  .debug_macro   0x00000000       0x10 ./component/serial_manager/fsl_component_serial_port_uart.o
  .debug_macro   0x00000000       0x66 ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_line    0x00000000      0x6ae ./component/serial_manager/fsl_component_serial_port_uart.o
- .debug_str     0x00000000    0x7d5c3 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_line    0x00000000      0x6d1 ./component/serial_manager/fsl_component_serial_port_uart.o
+ .debug_str     0x00000000    0x7d5c8 ./component/serial_manager/fsl_component_serial_port_uart.o
  .comment       0x00000000       0x4d ./component/serial_manager/fsl_component_serial_port_uart.o
  .debug_frame   0x00000000       0xe8 ./component/serial_manager/fsl_component_serial_port_uart.o
  .ARM.attributes
@@ -13700,8 +13700,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x10f ./component/lists/fsl_component_generic_list.o
  .debug_macro   0x00000000      0x174 ./component/lists/fsl_component_generic_list.o
  .debug_macro   0x00000000       0x10 ./component/lists/fsl_component_generic_list.o
- .debug_line    0x00000000      0x66a ./component/lists/fsl_component_generic_list.o
- .debug_str     0x00000000    0x79dd6 ./component/lists/fsl_component_generic_list.o
+ .debug_line    0x00000000      0x679 ./component/lists/fsl_component_generic_list.o
+ .debug_str     0x00000000    0x79ddb ./component/lists/fsl_component_generic_list.o
  .comment       0x00000000       0x4d ./component/lists/fsl_component_generic_list.o
  .debug_frame   0x00000000      0x254 ./component/lists/fsl_component_generic_list.o
  .ARM.attributes
@@ -13880,8 +13880,8 @@ Discarded input sections
  .debug_macro   0x00000000     0x12c5 ./board/peripherals.o
  .debug_macro   0x00000000      0x10f ./board/peripherals.o
  .debug_macro   0x00000000      0x174 ./board/peripherals.o
- .debug_line    0x00000000      0x354 ./board/peripherals.o
- .debug_str     0x00000000    0x79b0c ./board/peripherals.o
+ .debug_line    0x00000000      0x363 ./board/peripherals.o
+ .debug_str     0x00000000    0x79b11 ./board/peripherals.o
  .comment       0x00000000       0x4d ./board/peripherals.o
  .debug_frame   0x00000000       0x4c ./board/peripherals.o
  .ARM.attributes
@@ -14407,7 +14407,7 @@ END GROUP
                 0x14001000                __top_FLEX_RAM = 0x14001000
                 0x14001000                __top_RAM3 = 0x14001000
 
-.text           0x00000000    0x1ecc0
+.text           0x00000000    0x1ecc8
  FILL mask 0xff
                 0x00000000                __vectors_start__ = ABSOLUTE (.)
  *(SORT_BY_ALIGNMENT(.isr_vector))
@@ -14417,13 +14417,13 @@ END GROUP
                 0x00000198                . = ALIGN (0x4)
                 0x00000198                __section_table_start = .
                 0x00000198                __data_section_table = .
-                0x00000198        0x4 LONG 0x1ecc0 LOADADDR (.data)
+                0x00000198        0x4 LONG 0x1ecc8 LOADADDR (.data)
                 0x0000019c        0x4 LONG 0x20000000 ADDR (.data)
                 0x000001a0        0x4 LONG 0x40 SIZEOF (.data)
-                0x000001a4        0x4 LONG 0x1ecc0 LOADADDR (.data_RAM2)
+                0x000001a4        0x4 LONG 0x1ecc8 LOADADDR (.data_RAM2)
                 0x000001a8        0x4 LONG 0x1fff0000 ADDR (.data_RAM2)
                 0x000001ac        0x4 LONG 0x0 SIZEOF (.data_RAM2)
-                0x000001b0        0x4 LONG 0x1ecc0 LOADADDR (.data_RAM3)
+                0x000001b0        0x4 LONG 0x1ecc8 LOADADDR (.data_RAM3)
                 0x000001b4        0x4 LONG 0x14000000 ADDR (.data_RAM3)
                 0x000001b8        0x4 LONG 0x0 SIZEOF (.data_RAM3)
                 0x000001bc                __data_section_table_end = .
@@ -17219,55 +17219,55 @@ END GROUP
                 0x0001ea84        0x8 ./board/clock_config.o
                 0x0001ea84                oscConfig_BOARD_BootClockRUN
  .rodata.PORT_SetPinConfig.str1.4
-                0x0001ea8c       0x59 ./board/pin_mux.o
- *fill*         0x0001eae5        0x3 ff
+                0x0001ea8c       0x5e ./board/pin_mux.o
+ *fill*         0x0001eaea        0x2 ff
  .rodata.__num_Ciob_streams
-                0x0001eae8        0x4 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_semihost_nf.a(__ciob.o)
-                0x0001eae8                __num_Ciob_streams
+                0x0001eaec        0x4 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_semihost_nf.a(__ciob.o)
+                0x0001eaec                __num_Ciob_streams
  .rodata._Csys_alloc.str1.1
-                0x0001eaec       0x18 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(alloc.o)
+                0x0001eaf0       0x18 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(alloc.o)
  .rodata.__ctype
-                0x0001eb04      0x180 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(ctype.o)
-                0x0001eb04                __ctype
+                0x0001eb08      0x180 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(ctype.o)
+                0x0001eb08                __ctype
  .rodata._initio.str1.1
-                0x0001ec84        0x4 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(initio.o)
+                0x0001ec88        0x4 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(initio.o)
  .rodata.__vfprintf.str1.1
-                0x0001ec88       0x37 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(printf.o)
+                0x0001ec8c       0x37 c:/nxp/mcuxpressoide_11.3.0_5222/ide/plugins/com.nxp.mcuxpresso.tools.win32_11.3.0.202008311133/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libcr_c.a(printf.o)
                                  0x38 (size before relaxing)
-                0x0001ecc0                . = ALIGN (0x8)
- *fill*         0x0001ecbf        0x1 ff
+                0x0001ecc8                . = ALIGN (0x8)
+ *fill*         0x0001ecc3        0x5 ff
 
-.glue_7         0x0001ecc0        0x0
- .glue_7        0x0001ecc0        0x0 linker stubs
+.glue_7         0x0001ecc8        0x0
+ .glue_7        0x0001ecc8        0x0 linker stubs
 
-.glue_7t        0x0001ecc0        0x0
- .glue_7t       0x0001ecc0        0x0 linker stubs
+.glue_7t        0x0001ecc8        0x0
+ .glue_7t       0x0001ecc8        0x0 linker stubs
 
-.vfp11_veneer   0x0001ecc0        0x0
- .vfp11_veneer  0x0001ecc0        0x0 linker stubs
+.vfp11_veneer   0x0001ecc8        0x0
+ .vfp11_veneer  0x0001ecc8        0x0 linker stubs
 
-.v4_bx          0x0001ecc0        0x0
- .v4_bx         0x0001ecc0        0x0 linker stubs
+.v4_bx          0x0001ecc8        0x0
+ .v4_bx         0x0001ecc8        0x0 linker stubs
 
-.iplt           0x0001ecc0        0x0
- .iplt          0x0001ecc0        0x0 ./utilities/fsl_assert.o
+.iplt           0x0001ecc8        0x0
+ .iplt          0x0001ecc8        0x0 ./utilities/fsl_assert.o
 
-.rel.dyn        0x0001ecc0        0x0
- .rel.iplt      0x0001ecc0        0x0 ./utilities/fsl_assert.o
+.rel.dyn        0x0001ecc8        0x0
+ .rel.iplt      0x0001ecc8        0x0 ./utilities/fsl_assert.o
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
 
-.ARM.exidx      0x0001ecc0        0x0
-                0x0001ecc0                __exidx_start = .
+.ARM.exidx      0x0001ecc8        0x0
+                0x0001ecc8                __exidx_start = .
  *(SORT_BY_ALIGNMENT(.ARM.exidx*) SORT_BY_ALIGNMENT(.gnu.linkonce.armexidx.*))
-                0x0001ecc0                __exidx_end = .
-                0x0001ecc0                _etext = .
+                0x0001ecc8                __exidx_end = .
+                0x0001ecc8                _etext = .
 
 .m_usb_data
  *(SORT_BY_ALIGNMENT(m_usb_bdt))
 
-.data_RAM2      0x1fff0000        0x0 load address 0x0001ecc0
+.data_RAM2      0x1fff0000        0x0 load address 0x0001ecc8
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM2 = .)
                 [!provide]                PROVIDE (__start_data_SRAM_LOWER = .)
@@ -17281,7 +17281,7 @@ END GROUP
                 [!provide]                PROVIDE (__end_data_RAM2 = .)
                 [!provide]                PROVIDE (__end_data_SRAM_LOWER = .)
 
-.data_RAM3      0x14000000        0x0 load address 0x0001ecc0
+.data_RAM3      0x14000000        0x0 load address 0x0001ecc8
  FILL mask 0xff
                 [!provide]                PROVIDE (__start_data_RAM3 = .)
                 [!provide]                PROVIDE (__start_data_FLEX_RAM = .)
@@ -17302,7 +17302,7 @@ END GROUP
                 0x20000000                . = ALIGN (0x8)
                 0x20000000                _end_uninit_RESERVED = .
 
-.data           0x20000000       0x40 load address 0x0001ecc0
+.data           0x20000000       0x40 load address 0x0001ecc8
  FILL mask 0xff
                 0x20000000                _data = .
                 [!provide]                PROVIDE (__start_data_RAM = .)
@@ -17343,7 +17343,7 @@ END GROUP
                 [!provide]                PROVIDE (__end_data_RAM = .)
                 [!provide]                PROVIDE (__end_data_SRAM_UPPER = .)
 
-.igot.plt       0x20000040        0x0 load address 0x0001ed00
+.igot.plt       0x20000040        0x0 load address 0x0001ed08
  .igot.plt      0x20000040        0x0 ./utilities/fsl_assert.o
 
 .bss_RAM2       0x1fff0000        0x0
@@ -17802,8 +17802,8 @@ END GROUP
                 0x2002fc18                . = ALIGN (0x8)
                 0x20030000                _vStackTop = (. + _StackSize)
                 0x00000000                _image_start = LOADADDR (.text)
-                0x0001ed00                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x0001ed00                _image_size = (_image_end - _image_start)
+                0x0001ed08                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x0001ed08                _image_size = (_image_end - _image_start)
 OUTPUT(P3_CAN_MQTT_LWIP_freertos_lwip_mqtt_freertos.axf elf32-littlearm)
 LOAD linker stubs
 
@@ -18275,174 +18275,174 @@ LOAD linker stubs
  .debug_macro   0x0001fca7      0x149 ./board/clock_config.o
  .debug_macro   0x0001fdf0      0x114 ./board/pin_mux.o
 
-.debug_line     0x00000000    0x2c953
- .debug_line    0x00000000      0x5cb ./utilities/fsl_assert.o
- .debug_line    0x000005cb      0x90e ./startup/startup_mk64f12.o
- .debug_line    0x00000ed9      0xfce ./source/lwip_mqtt_freertos.o
- .debug_line    0x00001ea7      0x39d ./source/lwip_mqtt_id_sim.o
- .debug_line    0x00002244       0x59 ./source/semihost_hardfault.o
- .debug_line    0x0000229d      0x611 ./phy/fsl_phyksz8081.o
- .debug_line    0x000028ae      0x477 ./mdio/fsl_enet_mdio.o
- .debug_line    0x00002d25      0xa7c ./lwip/src/netif/ethernet.o
- .debug_line    0x000037a1      0xbf8 ./lwip/src/core/ipv4/acd.o
- .debug_line    0x00004399     0x1b62 ./lwip/src/core/ipv4/dhcp.o
- .debug_line    0x00005efb     0x1091 ./lwip/src/core/ipv4/etharp.o
- .debug_line    0x00006f8c      0xa57 ./lwip/src/core/ipv4/icmp.o
- .debug_line    0x000079e3      0xcef ./lwip/src/core/ipv4/ip4.o
- .debug_line    0x000086d2      0xb3b ./lwip/src/core/ipv4/ip4_addr.o
- .debug_line    0x0000920d      0xf44 ./lwip/src/core/ipv4/ip4_frag.o
- .debug_line    0x0000a151      0x929 ./lwip/src/core/def.o
- .debug_line    0x0000aa7a     0x1138 ./lwip/src/core/dns.o
- .debug_line    0x0000bbb2      0xa27 ./lwip/src/core/inet_chksum.o
- .debug_line    0x0000c5d9      0xa18 ./lwip/src/core/init.o
- .debug_line    0x0000cff1      0x876 ./lwip/src/core/ip.o
- .debug_line    0x0000d867      0xc5e ./lwip/src/core/mem.o
- .debug_line    0x0000e4c5      0xc11 ./lwip/src/core/memp.o
- .debug_line    0x0000f0d6      0xf6d ./lwip/src/core/netif.o
- .debug_line    0x00010043     0x12d1 ./lwip/src/core/pbuf.o
- .debug_line    0x00011314      0xcb9 ./lwip/src/core/raw.o
- .debug_line    0x00011fcd      0x73f ./lwip/src/core/sys.o
- .debug_line    0x0001270c     0x1b65 ./lwip/src/core/tcp.o
- .debug_line    0x00014271     0x18bc ./lwip/src/core/tcp_in.o
- .debug_line    0x00015b2d     0x1842 ./lwip/src/core/tcp_out.o
- .debug_line    0x0001736f      0xc88 ./lwip/src/core/timeouts.o
- .debug_line    0x00017ff7      0xfe2 ./lwip/src/core/udp.o
- .debug_line    0x00018fd9     0x17ea ./lwip/src/apps/mqtt/mqtt.o
- .debug_line    0x0001a7c3     0x1131 ./lwip/src/api/api_lib.o
- .debug_line    0x0001b8f4     0x1af2 ./lwip/src/api/api_msg.o
- .debug_line    0x0001d3e6      0xb1d ./lwip/src/api/netifapi.o
- .debug_line    0x0001df03      0xc48 ./lwip/src/api/tcpip.o
- .debug_line    0x0001eb4b      0xc8a ./lwip/port/enet_ethernetif.o
- .debug_line    0x0001f7d5      0xe54 ./lwip/port/enet_ethernetif_kinetis.o
- .debug_line    0x00020629      0xca9 ./lwip/port/sys_arch.o
- .debug_line    0x000212d2      0x372 ./freertos/freertos_kernel/portable/MemMang/heap_3.o
- .debug_line    0x00021644      0x654 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
- .debug_line    0x00021c98      0x7c3 ./freertos/freertos_kernel/event_groups.o
- .debug_line    0x0002245b      0x429 ./freertos/freertos_kernel/list.o
- .debug_line    0x00022884     0x1215 ./freertos/freertos_kernel/queue.o
- .debug_line    0x00023a99     0x1a9a ./freertos/freertos_kernel/tasks.o
- .debug_line    0x00025533      0xa15 ./freertos/freertos_kernel/timers.o
- .debug_line    0x00025f48     0x14ae ./drivers/fsl_clock.o
- .debug_line    0x000273f6     0x1882 ./drivers/fsl_enet.o
- .debug_line    0x00028c78     0x1360 ./drivers/fsl_flexcan.o
- .debug_line    0x00029fd8      0x32e ./drivers/fsl_sim.o
- .debug_line    0x0002a306     0x13d4 ./drivers/fsl_uart.o
- .debug_line    0x0002b6da      0x3de ./device/system_MK64F12.o
- .debug_line    0x0002bab8      0x657 ./board/board.o
- .debug_line    0x0002c10f      0x437 ./board/clock_config.o
- .debug_line    0x0002c546      0x40d ./board/pin_mux.o
+.debug_line     0x00000000    0x2d335
+ .debug_line    0x00000000      0x5f3 ./utilities/fsl_assert.o
+ .debug_line    0x000005f3      0x90e ./startup/startup_mk64f12.o
+ .debug_line    0x00000f01     0x102d ./source/lwip_mqtt_freertos.o
+ .debug_line    0x00001f2e      0x3ac ./source/lwip_mqtt_id_sim.o
+ .debug_line    0x000022da       0x59 ./source/semihost_hardfault.o
+ .debug_line    0x00002333      0x625 ./phy/fsl_phyksz8081.o
+ .debug_line    0x00002958      0x486 ./mdio/fsl_enet_mdio.o
+ .debug_line    0x00002dde      0xac7 ./lwip/src/netif/ethernet.o
+ .debug_line    0x000038a5      0xc39 ./lwip/src/core/ipv4/acd.o
+ .debug_line    0x000044de     0x1ba3 ./lwip/src/core/ipv4/dhcp.o
+ .debug_line    0x00006081     0x10d7 ./lwip/src/core/ipv4/etharp.o
+ .debug_line    0x00007158      0xa98 ./lwip/src/core/ipv4/icmp.o
+ .debug_line    0x00007bf0      0xd30 ./lwip/src/core/ipv4/ip4.o
+ .debug_line    0x00008920      0xb77 ./lwip/src/core/ipv4/ip4_addr.o
+ .debug_line    0x00009497      0xf85 ./lwip/src/core/ipv4/ip4_frag.o
+ .debug_line    0x0000a41c      0x960 ./lwip/src/core/def.o
+ .debug_line    0x0000ad7c     0x1179 ./lwip/src/core/dns.o
+ .debug_line    0x0000bef5      0xa5e ./lwip/src/core/inet_chksum.o
+ .debug_line    0x0000c953      0xa5e ./lwip/src/core/init.o
+ .debug_line    0x0000d3b1      0x8b7 ./lwip/src/core/ip.o
+ .debug_line    0x0000dc68      0xc9a ./lwip/src/core/mem.o
+ .debug_line    0x0000e902      0xc57 ./lwip/src/core/memp.o
+ .debug_line    0x0000f559      0xfb3 ./lwip/src/core/netif.o
+ .debug_line    0x0001050c     0x130d ./lwip/src/core/pbuf.o
+ .debug_line    0x00011819      0xcfa ./lwip/src/core/raw.o
+ .debug_line    0x00012513      0x776 ./lwip/src/core/sys.o
+ .debug_line    0x00012c89     0x1ba6 ./lwip/src/core/tcp.o
+ .debug_line    0x0001482f     0x18fd ./lwip/src/core/tcp_in.o
+ .debug_line    0x0001612c     0x1883 ./lwip/src/core/tcp_out.o
+ .debug_line    0x000179af      0xcc9 ./lwip/src/core/timeouts.o
+ .debug_line    0x00018678     0x1023 ./lwip/src/core/udp.o
+ .debug_line    0x0001969b     0x1830 ./lwip/src/apps/mqtt/mqtt.o
+ .debug_line    0x0001aecb     0x1172 ./lwip/src/api/api_lib.o
+ .debug_line    0x0001c03d     0x1b33 ./lwip/src/api/api_msg.o
+ .debug_line    0x0001db70      0xb5e ./lwip/src/api/netifapi.o
+ .debug_line    0x0001e6ce      0xc8e ./lwip/src/api/tcpip.o
+ .debug_line    0x0001f35c      0xcdf ./lwip/port/enet_ethernetif.o
+ .debug_line    0x0002003b      0xea9 ./lwip/port/enet_ethernetif_kinetis.o
+ .debug_line    0x00020ee4      0xce5 ./lwip/port/sys_arch.o
+ .debug_line    0x00021bc9      0x381 ./freertos/freertos_kernel/portable/MemMang/heap_3.o
+ .debug_line    0x00021f4a      0x663 ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
+ .debug_line    0x000225ad      0x7d2 ./freertos/freertos_kernel/event_groups.o
+ .debug_line    0x00022d7f      0x438 ./freertos/freertos_kernel/list.o
+ .debug_line    0x000231b7     0x1224 ./freertos/freertos_kernel/queue.o
+ .debug_line    0x000243db     0x1aa9 ./freertos/freertos_kernel/tasks.o
+ .debug_line    0x00025e84      0xa24 ./freertos/freertos_kernel/timers.o
+ .debug_line    0x000268a8     0x14b8 ./drivers/fsl_clock.o
+ .debug_line    0x00027d60     0x188c ./drivers/fsl_enet.o
+ .debug_line    0x000295ec     0x136a ./drivers/fsl_flexcan.o
+ .debug_line    0x0002a956      0x338 ./drivers/fsl_sim.o
+ .debug_line    0x0002ac8e     0x13de ./drivers/fsl_uart.o
+ .debug_line    0x0002c06c      0x3e3 ./device/system_MK64F12.o
+ .debug_line    0x0002c44f      0x684 ./board/board.o
+ .debug_line    0x0002cad3      0x446 ./board/clock_config.o
+ .debug_line    0x0002cf19      0x41c ./board/pin_mux.o
 
-.debug_str      0x00000000    0xa3dae
- .debug_str     0x00000000    0x7d447 ./utilities/fsl_assert.o
-                              0x7d4fa (size before relaxing)
- .debug_str     0x0007d447      0x7c4 ./startup/startup_mk64f12.o
-                               0x376c (size before relaxing)
- .debug_str     0x0007dc0b    0x12dad ./source/lwip_mqtt_freertos.o
-                              0x90600 (size before relaxing)
- .debug_str     0x000909b8       0x78 ./source/lwip_mqtt_id_sim.o
-                              0x79b4f (size before relaxing)
- .debug_str     0x00090a30       0x1f ./source/semihost_hardfault.o
-                               0x2efd (size before relaxing)
- .debug_str     0x00090a4f      0x2e7 ./phy/fsl_phyksz8081.o
-                              0x7ad6e (size before relaxing)
- .debug_str     0x00090d36      0x57e ./mdio/fsl_enet_mdio.o
-                              0x7b45c (size before relaxing)
- .debug_str     0x000912b4      0x6f1 ./lwip/src/netif/ethernet.o
-                              0x87846 (size before relaxing)
- .debug_str     0x000919a5      0x2df ./lwip/src/core/ipv4/acd.o
-                              0x86298 (size before relaxing)
- .debug_str     0x00091c84      0xb3d ./lwip/src/core/ipv4/dhcp.o
-                              0x88998 (size before relaxing)
- .debug_str     0x000927c1      0x42f ./lwip/src/core/ipv4/etharp.o
-                              0x88251 (size before relaxing)
- .debug_str     0x00092bf0      0x3af ./lwip/src/core/ipv4/icmp.o
-                              0x86754 (size before relaxing)
- .debug_str     0x00092f9f     0x2296 ./lwip/src/core/ipv4/ip4.o
-                              0x897c5 (size before relaxing)
- .debug_str     0x00095235       0x99 ./lwip/src/core/ipv4/ip4_addr.o
-                              0x85fe0 (size before relaxing)
- .debug_str     0x000952ce      0x423 ./lwip/src/core/ipv4/ip4_frag.o
-                              0x874f4 (size before relaxing)
- .debug_str     0x000956f1       0x94 ./lwip/src/core/def.o
-                              0x822cb (size before relaxing)
- .debug_str     0x00095785      0x8d2 ./lwip/src/core/dns.o
-                              0x87a89 (size before relaxing)
- .debug_str     0x00096057      0x143 ./lwip/src/core/inet_chksum.o
-                              0x84368 (size before relaxing)
- .debug_str     0x0009619a      0x3ac ./lwip/src/core/init.o
-                              0x8c5a8 (size before relaxing)
- .debug_str     0x00096546       0x16 ./lwip/src/core/ip.o
-                              0x86cd6 (size before relaxing)
- .debug_str     0x0009655c      0x428 ./lwip/src/core/mem.o
-                              0x8409e (size before relaxing)
- .debug_str     0x00096984      0xa3a ./lwip/src/core/memp.o
-                              0x8ddd7 (size before relaxing)
- .debug_str     0x000973be      0x235 ./lwip/src/core/netif.o
-                              0x8a6e4 (size before relaxing)
- .debug_str     0x000975f3      0x426 ./lwip/src/core/pbuf.o
-                              0x86113 (size before relaxing)
- .debug_str     0x00097a19      0x132 ./lwip/src/core/raw.o
-                              0x8727b (size before relaxing)
- .debug_str     0x00097b4b       0x2b ./lwip/src/core/sys.o
-                              0x82568 (size before relaxing)
- .debug_str     0x00097b76      0x501 ./lwip/src/core/tcp.o
-                              0x8950e (size before relaxing)
- .debug_str     0x00098077      0x224 ./lwip/src/core/tcp_in.o
-                              0x891cb (size before relaxing)
- .debug_str     0x0009829b      0x3f5 ./lwip/src/core/tcp_out.o
-                              0x88aba (size before relaxing)
- .debug_str     0x00098690      0x1e0 ./lwip/src/core/timeouts.o
-                              0x8a343 (size before relaxing)
- .debug_str     0x00098870      0x221 ./lwip/src/core/udp.o
-                              0x88180 (size before relaxing)
- .debug_str     0x00098a91      0xad4 ./lwip/src/apps/mqtt/mqtt.o
-                              0x89320 (size before relaxing)
- .debug_str     0x00099565      0x768 ./lwip/src/api/api_lib.o
-                              0x8a575 (size before relaxing)
- .debug_str     0x00099ccd      0x527 ./lwip/src/api/api_msg.o
-                              0x89aca (size before relaxing)
- .debug_str     0x0009a1f4      0x2c4 ./lwip/src/api/netifapi.o
-                              0x887ac (size before relaxing)
- .debug_str     0x0009a4b8      0x390 ./lwip/src/api/tcpip.o
-                              0x880e3 (size before relaxing)
- .debug_str     0x0009a848      0x965 ./lwip/port/enet_ethernetif.o
-                              0x8790b (size before relaxing)
- .debug_str     0x0009b1ad      0xf0c ./lwip/port/enet_ethernetif_kinetis.o
-                              0x897c9 (size before relaxing)
- .debug_str     0x0009c0b9      0x38f ./lwip/port/sys_arch.o
-                              0x86aad (size before relaxing)
- .debug_str     0x0009c448       0xbd ./freertos/freertos_kernel/portable/MemMang/heap_3.o
-                               0x8300 (size before relaxing)
- .debug_str     0x0009c505      0x81c ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
-                               0x8aad (size before relaxing)
- .debug_str     0x0009cd21      0x418 ./freertos/freertos_kernel/event_groups.o
-                               0x8fb6 (size before relaxing)
- .debug_str     0x0009d139       0xb0 ./freertos/freertos_kernel/list.o
-                               0x7d2d (size before relaxing)
- .debug_str     0x0009d1e9      0x800 ./freertos/freertos_kernel/queue.o
-                               0x93db (size before relaxing)
- .debug_str     0x0009d9e9     0x14d4 ./freertos/freertos_kernel/tasks.o
-                               0xa53b (size before relaxing)
- .debug_str     0x0009eebd      0x600 ./freertos/freertos_kernel/timers.o
-                               0x9903 (size before relaxing)
- .debug_str     0x0009f4bd     0x163d ./drivers/fsl_clock.o
-                              0x7c243 (size before relaxing)
- .debug_str     0x000a0afa      0x922 ./drivers/fsl_enet.o
-                              0x7c965 (size before relaxing)
- .debug_str     0x000a141c     0x121c ./drivers/fsl_flexcan.o
-                              0x7d20e (size before relaxing)
- .debug_str     0x000a2638       0xff ./drivers/fsl_sim.o
-                              0x79ccc (size before relaxing)
- .debug_str     0x000a2737      0xe6d ./drivers/fsl_uart.o
-                              0x7bb17 (size before relaxing)
- .debug_str     0x000a35a4       0xbb ./device/system_MK64F12.o
-                              0x784b8 (size before relaxing)
- .debug_str     0x000a365f       0xc7 ./board/board.o
-                              0x7e6af (size before relaxing)
- .debug_str     0x000a3726      0x306 ./board/clock_config.o
-                              0x7abbc (size before relaxing)
- .debug_str     0x000a3a2c      0x382 ./board/pin_mux.o
-                              0x7a9de (size before relaxing)
+.debug_str      0x00000000    0xa3db3
+ .debug_str     0x00000000    0x7d44c ./utilities/fsl_assert.o
+                              0x7d4ff (size before relaxing)
+ .debug_str     0x0007d44c      0x7c4 ./startup/startup_mk64f12.o
+                               0x3771 (size before relaxing)
+ .debug_str     0x0007dc10    0x12dad ./source/lwip_mqtt_freertos.o
+                              0x90605 (size before relaxing)
+ .debug_str     0x000909bd       0x78 ./source/lwip_mqtt_id_sim.o
+                              0x79b54 (size before relaxing)
+ .debug_str     0x00090a35       0x1f ./source/semihost_hardfault.o
+                               0x2f02 (size before relaxing)
+ .debug_str     0x00090a54      0x2e7 ./phy/fsl_phyksz8081.o
+                              0x7ad73 (size before relaxing)
+ .debug_str     0x00090d3b      0x57e ./mdio/fsl_enet_mdio.o
+                              0x7b461 (size before relaxing)
+ .debug_str     0x000912b9      0x6f1 ./lwip/src/netif/ethernet.o
+                              0x8784b (size before relaxing)
+ .debug_str     0x000919aa      0x2df ./lwip/src/core/ipv4/acd.o
+                              0x8629d (size before relaxing)
+ .debug_str     0x00091c89      0xb3d ./lwip/src/core/ipv4/dhcp.o
+                              0x8899d (size before relaxing)
+ .debug_str     0x000927c6      0x42f ./lwip/src/core/ipv4/etharp.o
+                              0x88256 (size before relaxing)
+ .debug_str     0x00092bf5      0x3af ./lwip/src/core/ipv4/icmp.o
+                              0x86759 (size before relaxing)
+ .debug_str     0x00092fa4     0x2296 ./lwip/src/core/ipv4/ip4.o
+                              0x897ca (size before relaxing)
+ .debug_str     0x0009523a       0x99 ./lwip/src/core/ipv4/ip4_addr.o
+                              0x85fe5 (size before relaxing)
+ .debug_str     0x000952d3      0x423 ./lwip/src/core/ipv4/ip4_frag.o
+                              0x874f9 (size before relaxing)
+ .debug_str     0x000956f6       0x94 ./lwip/src/core/def.o
+                              0x822d0 (size before relaxing)
+ .debug_str     0x0009578a      0x8d2 ./lwip/src/core/dns.o
+                              0x87a8e (size before relaxing)
+ .debug_str     0x0009605c      0x143 ./lwip/src/core/inet_chksum.o
+                              0x8436d (size before relaxing)
+ .debug_str     0x0009619f      0x3ac ./lwip/src/core/init.o
+                              0x8c5ad (size before relaxing)
+ .debug_str     0x0009654b       0x16 ./lwip/src/core/ip.o
+                              0x86cdb (size before relaxing)
+ .debug_str     0x00096561      0x428 ./lwip/src/core/mem.o
+                              0x840a3 (size before relaxing)
+ .debug_str     0x00096989      0xa3a ./lwip/src/core/memp.o
+                              0x8dddc (size before relaxing)
+ .debug_str     0x000973c3      0x235 ./lwip/src/core/netif.o
+                              0x8a6e9 (size before relaxing)
+ .debug_str     0x000975f8      0x426 ./lwip/src/core/pbuf.o
+                              0x86118 (size before relaxing)
+ .debug_str     0x00097a1e      0x132 ./lwip/src/core/raw.o
+                              0x87280 (size before relaxing)
+ .debug_str     0x00097b50       0x2b ./lwip/src/core/sys.o
+                              0x8256d (size before relaxing)
+ .debug_str     0x00097b7b      0x501 ./lwip/src/core/tcp.o
+                              0x89513 (size before relaxing)
+ .debug_str     0x0009807c      0x224 ./lwip/src/core/tcp_in.o
+                              0x891d0 (size before relaxing)
+ .debug_str     0x000982a0      0x3f5 ./lwip/src/core/tcp_out.o
+                              0x88abf (size before relaxing)
+ .debug_str     0x00098695      0x1e0 ./lwip/src/core/timeouts.o
+                              0x8a348 (size before relaxing)
+ .debug_str     0x00098875      0x221 ./lwip/src/core/udp.o
+                              0x88185 (size before relaxing)
+ .debug_str     0x00098a96      0xad4 ./lwip/src/apps/mqtt/mqtt.o
+                              0x89325 (size before relaxing)
+ .debug_str     0x0009956a      0x768 ./lwip/src/api/api_lib.o
+                              0x8a57a (size before relaxing)
+ .debug_str     0x00099cd2      0x527 ./lwip/src/api/api_msg.o
+                              0x89acf (size before relaxing)
+ .debug_str     0x0009a1f9      0x2c4 ./lwip/src/api/netifapi.o
+                              0x887b1 (size before relaxing)
+ .debug_str     0x0009a4bd      0x390 ./lwip/src/api/tcpip.o
+                              0x880e8 (size before relaxing)
+ .debug_str     0x0009a84d      0x965 ./lwip/port/enet_ethernetif.o
+                              0x87910 (size before relaxing)
+ .debug_str     0x0009b1b2      0xf0c ./lwip/port/enet_ethernetif_kinetis.o
+                              0x897ce (size before relaxing)
+ .debug_str     0x0009c0be      0x38f ./lwip/port/sys_arch.o
+                              0x86ab2 (size before relaxing)
+ .debug_str     0x0009c44d       0xbd ./freertos/freertos_kernel/portable/MemMang/heap_3.o
+                               0x8305 (size before relaxing)
+ .debug_str     0x0009c50a      0x81c ./freertos/freertos_kernel/portable/GCC/ARM_CM4F/port.o
+                               0x8ab2 (size before relaxing)
+ .debug_str     0x0009cd26      0x418 ./freertos/freertos_kernel/event_groups.o
+                               0x8fbb (size before relaxing)
+ .debug_str     0x0009d13e       0xb0 ./freertos/freertos_kernel/list.o
+                               0x7d32 (size before relaxing)
+ .debug_str     0x0009d1ee      0x800 ./freertos/freertos_kernel/queue.o
+                               0x93e0 (size before relaxing)
+ .debug_str     0x0009d9ee     0x14d4 ./freertos/freertos_kernel/tasks.o
+                               0xa540 (size before relaxing)
+ .debug_str     0x0009eec2      0x600 ./freertos/freertos_kernel/timers.o
+                               0x9908 (size before relaxing)
+ .debug_str     0x0009f4c2     0x163d ./drivers/fsl_clock.o
+                              0x7c248 (size before relaxing)
+ .debug_str     0x000a0aff      0x922 ./drivers/fsl_enet.o
+                              0x7c96a (size before relaxing)
+ .debug_str     0x000a1421     0x121c ./drivers/fsl_flexcan.o
+                              0x7d213 (size before relaxing)
+ .debug_str     0x000a263d       0xff ./drivers/fsl_sim.o
+                              0x79cd1 (size before relaxing)
+ .debug_str     0x000a273c      0xe6d ./drivers/fsl_uart.o
+                              0x7bb1c (size before relaxing)
+ .debug_str     0x000a35a9       0xbb ./device/system_MK64F12.o
+                              0x784bd (size before relaxing)
+ .debug_str     0x000a3664       0xc7 ./board/board.o
+                              0x7e6b4 (size before relaxing)
+ .debug_str     0x000a372b      0x306 ./board/clock_config.o
+                              0x7abc1 (size before relaxing)
+ .debug_str     0x000a3a31      0x382 ./board/pin_mux.o
+                              0x7a9e3 (size before relaxing)
 
 .comment        0x00000000       0x4c
  .comment       0x00000000       0x4c ./utilities/fsl_assert.o
